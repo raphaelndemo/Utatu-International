@@ -10,8 +10,8 @@ export default function ContactPage() {
             <div className="max-w-5xl mx-auto">
                 <div className="text-center mb-16 space-y-4">
                     <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary">Contact Us</h1>
-                    <p className="text-xl text-muted-foreground">
-                        We&apos;d love to hear from you. Get in touch with us for any inquiries.
+                    <p className="text-lg text-muted-foreground">
+                        Thank you for visiting our website. Whether you have questions about our programs, need guidance on admissions, or want to schedule a visit, we’re here to assist you. If you are interested in enrolling your child at Utatu International School, kindly fill out the form below, and our admissions team will get in touch with you shortly.
                     </p>
                 </div>
 

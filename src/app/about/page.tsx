@@ -1,55 +1,146 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function AboutPage() {
     return (
-        <div className="container py-20">
-            <div className="max-w-4xl mx-auto space-y-12">
-                <div className="text-center space-y-4">
-                    <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary" id="about-us">About Utatu International</h1>
-                    <p className="text-xl text-muted-foreground">
-                        Nurturing the leaders of tomorrow through world-class Cambridge education.
-                    </p>
+        <>
+            {/* Welcome Section */}
+            <section className="bg-background overflow-hidden">
+                <div className="flex flex-col lg:flex-row min-h-[600px]">
+                    {/* Text Platform */}
+                    <div className="w-full lg:w-1/2 flex items-center justify-center p-8 lg:p-16 xl:p-24 relative z-10">
+                        <div className="space-y-6 max-w-xl">
+                            <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary leading-tight">
+                                Who We Are
+                            </h2>
+                            <h3 className="text-xl md:text-2xl font-semibold text-foreground/80">
+                                A Holistic Approach to Education – Shaping futures, one student at a time.
+                            </h3>
+                            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+                                <p>
+                                    Utatu International School is more than just an institution; it’s a cornerstone for shaping the leaders of tomorrow. The school is based in Nairobi, Kenya. Rooted in the Swahili word for Trinity, our school embodies a holistic approach to education that nurtures the mind, body, and spirit. With a steadfast commitment to providing quality, affordable education, Utatu is dedicated to transforming lives and uplifting communities.
+                                </p>
+                            </div>
+                            <div className="pt-4">
+                                <h3 className="text-lg font-bold font-italic font-heading text-primary border-l-4 border-secondary pl-4">
+                                    Our Motto: Be Transformed to Transform the World
+                                </h3>
+                            </div>
+
+                            <div className="pt-6">
+                                <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold px-8" asChild>
+                                    <Link href="/about">Our Schools</Link>
+                                </Button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Image Platform */}
+                    <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-full">
+                        <div
+                            className="absolute inset-0 w-full h-full"
+                            style={{
+                                clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)",
+                            }}
+                        >
+                            <Image
+                                src="/images/online_studies.jpg"
+                                alt="Student reading or studying"
+                                fill
+                                className="object-cover"
+                                priority
+                            />
+                            {/* Overlay for better text contrast if needed or just aesthetic tint */}
+                            <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div className="prose prose-lg max-w-none">
-                    <p>
-                        Utatu is an international school based in Nairobi, Kenya. The school was born out of the need to have a quality holistic affordable education following the Cambridge International curriculum.
-                    </p>
-                    <p>
-                        We are committed to providing an environment where every student can thrive academically, socially, and emotionally. Our dedicated team of educators ensures that each child receives personalized attention and support to reach their full potential.
-                    </p>
+            {/* Who We Are Section */}
+            <section className="py-24 relative overflow-hidden">
+                
+                
 
-                    <h2 className="text-2xl font-bold font-heading text-primary mt-8 mb-4" id="our-mission">Our Mission</h2>
-                    <p>
-                        To provide a holistic education that empowers students to become responsible, compassionate, and innovative global citizens.
-                    </p>
+                <div className="container relative z-10 px-4 mx-auto">
 
-                    <h2 className="text-2xl font-bold font-heading text-primary mt-8 mb-4" id="our-vision">Our Vision</h2>
-                    <p>
-                        To be a leading international school in Kenya, recognized for academic excellence and character development.
-                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                        {/* Mission */}
+                        <div className="flex flex-col items-center text-center space-y-6">
+                            <div className="relative w-64 h-64 rounded-full border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
+                                <Image
+                                    src="/images/preparatory.jpg"
+                                    alt="Student representing our mission"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold font-heading text-primary">Our Mission</h3>
+                                <p className="text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto">
+                                    To offer holistic transformative education that develops the learners' intellectual, social, physical, emotional and spiritual well-being for community advancement.
+                                </p>
+                            </div>
+                        </div>
 
-                    <h2 className="text-2xl font-bold font-heading text-primary mt-8 mb-4" id="our-values">Core Values</h2>
-                    <ul className="list-disc pl-6 space-y-2">
-                        <li>Excellence</li>
-                        <li>Integrity</li>
-                        <li>Respect</li>
-                        <li>Innovation</li>
-                        <li>Community</li>
-                    </ul>
+                        {/* Vision */}
+                        <div className="flex flex-col items-center text-center space-y-6">
+                            <div className="relative w-72 h-72 rounded-full border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0 -mt-4 md:-mt-8">
+                                <Image
+                                    src="/images/senior_high.jpg"
+                                    alt="Student representing our vision"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold font-heading text-primary">Our Vision</h3>
+                                <p className="text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto">
+                                    To transform learners through quality holistic education.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* Core Values */}
+                        <div className="flex flex-col items-center text-center space-y-6">
+                            <div className="relative w-64 h-64 rounded-full border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
+                                <Image
+                                    src="/images/girl_reading.png"
+                                    alt="Student representing our core values"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <div className="space-y-4">
+                                <h3 className="text-2xl font-bold font-heading text-primary">Core Values</h3>
+                                <ul className="text-muted-foreground font-medium leading-relaxed space-y-1 max-w-sm mx-auto list-none">
+                                    <li>Quality Christ centred education</li>
+                                    <li>Life-long learning</li>
+                                    <li>Holistic growth</li>
+                                    <li>Community development and servanthood</li>
+                                    <li>Integrity</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </section>
 
-                <div className="bg-muted p-8 rounded-lg text-center space-y-6">
-                    <h3 className="text-2xl font-bold font-heading">Ready to join our community?</h3>
-                    <p className="text-muted-foreground">
-                        We welcome families from all backgrounds to join the Utatu International family.
-                    </p>
-                    <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
-                        <Link href="/contact">Apply Now</Link>
-                    </Button>
+            <div className="container py-20">
+                <div className="max-w-4xl mx-auto space-y-12">
+
+                    <div className="bg-muted p-8 rounded-lg text-center space-y-6">
+                        <h3 className="text-2xl font-bold font-heading">Ready to join our community?</h3>
+                        <p className="text-muted-foreground">
+                            We welcome families from all backgrounds to join the Utatu International family.
+                        </p>
+                        <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
+                            <Link href="/contact">Apply Now</Link>
+                        </Button>
+                    </div>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
