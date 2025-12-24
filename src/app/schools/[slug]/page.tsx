@@ -75,7 +75,7 @@ export default async function SchoolPage({
                 {/* ================= Main Article ================= */}
                 <article className="lg:col-span-8">
                     {/* Featured Image */}
-                    <div className="relative w-full h-[420px] rounded-xl overflow-hidden mb-8">
+                    <div className="relative w-full h-[250px] sm:h-[320px] md:h-[380px] lg:h-[420px] rounded-xl overflow-hidden mb-8">
                         <Image
                             src={school.image}
                             alt={school.title}
@@ -92,7 +92,7 @@ export default async function SchoolPage({
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-4xl font-bold font-heading mb-6">
+                    <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-6">
                         {school.title}
                     </h1>
 
@@ -594,23 +594,23 @@ export default async function SchoolPage({
                             </div>
                         </div>
                     ) : (
-                        <div className="prose prose-lg max-w-none">
+                <div className="prose prose-lg max-w-none">
                             <p className="leading-relaxed mb-5">{school.content}</p>
                             <p className="leading-relaxed mb-5">
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                        </div>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    </p>
+                </div>
                     )}
 
                     {/* Action Buttons */}
-                    <div className="flex gap-4 mt-8">
-                    <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
-                        <Link href="/contact">Apply for {school.title}</Link>
-                    </Button>
-                    <Button size="lg" variant="outline" asChild>
-                        <Link href="/contact">Schedule a Visit</Link>
-                    </Button>
-                </div>
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-8">
+                        <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto" asChild>
+                            <Link href="/contact">Apply for {school.title}</Link>
+                        </Button>
+                        <Button size="lg" variant="outline" className="w-full sm:w-auto" asChild>
+                            <Link href="/contact">Schedule a Visit</Link>
+                        </Button>
+                    </div>
                 </article>
 
                 {/* ================= Sidebar ================= */}

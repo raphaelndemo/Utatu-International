@@ -55,7 +55,7 @@ export default async function PostPage({ params }: PostPageProps) {
         <article className="lg:col-span-8">
           {/* Featured Image */}
           {post.mainImage && (
-            <div className="relative w-full h-[420px] rounded-xl overflow-hidden mb-8">
+            <div className="relative w-full h-[250px] sm:h-[320px] md:h-[380px] lg:h-[420px] rounded-xl overflow-hidden mb-8">
               <Image
                 src={urlFor(post.mainImage).width(1200).height(700).url()}
                 alt={post.mainImage.alt || post.title}
@@ -78,7 +78,7 @@ export default async function PostPage({ params }: PostPageProps) {
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl font-bold font-heading mb-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading mb-6">
             {post.title}
           </h1>
 

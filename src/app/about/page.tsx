@@ -37,13 +37,8 @@ export default function AboutPage() {
                     </div>
 
                     {/* Image Platform */}
-                    <div className="w-full lg:w-1/2 relative min-h-[400px] lg:min-h-full">
-                        <div
-                            className="absolute inset-0 w-full h-full"
-                            style={{
-                                clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0% 100%)",
-                            }}
-                        >
+                    <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full">
+                        <div className="absolute inset-0 w-full h-full [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] lg:[clip-path:polygon(10%_0,100%_0,100%_100%,0%_100%)]">
                             <Image
                                 src="/images/online_studies.jpg"
                                 alt="Student reading or studying"
@@ -65,10 +60,10 @@ export default function AboutPage() {
 
                 <div className="container relative z-10 px-4 mx-auto">
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-7xl mx-auto">
                         {/* Mission */}
-                        <div className="flex flex-col items-center text-center space-y-6">
-                            <div className="relative w-64 h-64 rounded-full border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
+                        <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
+                            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-[4px] md:border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
                                 <Image
                                     src="/images/preparatory.jpg"
                                     alt="Student representing our mission"
@@ -76,17 +71,17 @@ export default function AboutPage() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="space-y-4">
-                                <h3 className="text-2xl font-bold font-heading text-primary">Our Mission</h3>
-                                <p className="text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto">
+                            <div className="space-y-3 md:space-y-4">
+                                <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary">Our Mission</h3>
+                                <p className="text-sm sm:text-base text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto px-4">
                                     To offer holistic transformative education that develops the learners' intellectual, social, physical, emotional and spiritual well-being for community advancement.
                                 </p>
                             </div>
                         </div>
 
                         {/* Vision */}
-                        <div className="flex flex-col items-center text-center space-y-6">
-                            <div className="relative w-72 h-72 rounded-full border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0 -mt-4 md:-mt-8">
+                        <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
+                            <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full border-[4px] md:border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0 -mt-2 md:-mt-4 lg:-mt-8">
                                 <Image
                                     src="/images/senior_high.jpg"
                                     alt="Student representing our vision"
@@ -94,17 +89,17 @@ export default function AboutPage() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="space-y-4">
-                                <h3 className="text-2xl font-bold font-heading text-primary">Our Vision</h3>
-                                <p className="text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto">
+                            <div className="space-y-3 md:space-y-4">
+                                <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary">Our Vision</h3>
+                                <p className="text-sm sm:text-base text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto px-4">
                                     To transform learners through quality holistic education.
                                 </p>
                             </div>
                         </div>
 
                         {/* Core Values */}
-                        <div className="flex flex-col items-center text-center space-y-6">
-                            <div className="relative w-64 h-64 rounded-full border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
+                        <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
+                            <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-[4px] md:border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
                                 <Image
                                     src="/images/girl_reading.png"
                                     alt="Student representing our core values"
@@ -112,9 +107,9 @@ export default function AboutPage() {
                                     className="object-cover"
                                 />
                             </div>
-                            <div className="space-y-4">
-                                <h3 className="text-2xl font-bold font-heading text-primary">Core Values</h3>
-                                <ul className="text-muted-foreground font-medium leading-relaxed space-y-1 max-w-sm mx-auto list-none">
+                            <div className="space-y-3 md:space-y-4">
+                                <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary">Core Values</h3>
+                                <ul className="text-sm sm:text-base text-muted-foreground font-medium leading-relaxed space-y-1 max-w-sm mx-auto list-none px-4">
                                     <li>Quality Christ centred education</li>
                                     <li>Life-long learning</li>
                                     <li>Holistic growth</li>

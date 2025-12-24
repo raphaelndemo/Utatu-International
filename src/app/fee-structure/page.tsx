@@ -81,17 +81,17 @@ export default function FeeStructure() {
                 </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
                 {/* Left Column: Fees Table */}
                 <div className="space-y-8">
-                    <div className="border rounded-lg overflow-hidden">
+                    <div className="border rounded-lg overflow-hidden overflow-x-auto">
                         <Table>
                             <TableHeader className="bg-muted">
                                 <TableRow>
-                                    <TableHead className="text-xl font-bold text-primary font-heading w-1/2">
+                                    <TableHead className="text-base sm:text-lg lg:text-xl font-bold text-primary font-heading w-1/2">
                                         Grade/Year
                                     </TableHead>
-                                    <TableHead className="text-xl font-bold text-primary font-heading">
+                                    <TableHead className="text-base sm:text-lg lg:text-xl font-bold text-primary font-heading">
                                         Tuition Fees (Ksh.)
                                     </TableHead>
                                 </TableRow>
@@ -99,20 +99,20 @@ export default function FeeStructure() {
                             <TableBody>
                                 {fees.map((fee) => (
                                     <TableRow key={fee.grade} className="hover:bg-muted/50">
-                                        <TableCell className="text-lg font-medium py-4">
+                                        <TableCell className="text-sm sm:text-base lg:text-lg font-medium py-3 sm:py-4">
                                             {fee.grade}
                                         </TableCell>
-                                        <TableCell className="text-lg py-4">{fee.tuition}</TableCell>
+                                        <TableCell className="text-sm sm:text-base lg:text-lg py-3 sm:py-4">{fee.tuition}</TableCell>
                                     </TableRow>
                                 ))}
 
                                 {/* Additional Fees */}
                                 {additionalFees.map((fee) => (
                                     <TableRow key={fee.name} className="hover:bg-muted/50">
-                                        <TableCell className="text-lg font-medium py-4">
+                                        <TableCell className="text-sm sm:text-base lg:text-lg font-medium py-3 sm:py-4">
                                             {fee.name}
                                         </TableCell>
-                                        <TableCell className="text-lg py-4">{fee.amount}</TableCell>
+                                        <TableCell className="text-sm sm:text-base lg:text-lg py-3 sm:py-4">{fee.amount}</TableCell>
                                     </TableRow>
                                 ))}
 
@@ -120,7 +120,7 @@ export default function FeeStructure() {
                                 <TableRow className="bg-muted/30">
                                     <TableCell
                                         colSpan={2}
-                                        className="text-lg font-bold text-primary py-4"
+                                        className="text-base sm:text-lg font-bold text-primary py-3 sm:py-4"
                                     >
                                         Lab Fees:
                                     </TableCell>
@@ -128,10 +128,10 @@ export default function FeeStructure() {
 
                                 {labFees.map((fee) => (
                                     <TableRow key={fee.name} className="hover:bg-muted/50">
-                                        <TableCell className="text-lg font-medium py-4">
+                                        <TableCell className="text-sm sm:text-base lg:text-lg font-medium py-3 sm:py-4">
                                             {fee.name}
                                         </TableCell>
-                                        <TableCell className="text-lg py-4">{fee.amount}</TableCell>
+                                        <TableCell className="text-sm sm:text-base lg:text-lg py-3 sm:py-4">{fee.amount}</TableCell>
                                     </TableRow>
                                 ))}
                             </TableBody>
@@ -152,10 +152,10 @@ export default function FeeStructure() {
 
                     <div className="space-y-6">
                         <div>
-                            <h3 className="text-2xl font-bold font-heading text-primary mb-4">
+                            <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary mb-4">
                                 Payment Plan
                             </h3>
-                            <ol className="list-decimal list-outside space-y-2 pl-5 text-muted-foreground text-lg">
+                            <ol className="list-decimal list-outside space-y-2 pl-5 text-muted-foreground text-base sm:text-lg">
                                 <li>
                                     Pay lump sum within the first week and get a 5% discount.
                                 </li>
@@ -167,7 +167,7 @@ export default function FeeStructure() {
                             </ol>
                         </div>
 
-                        <ul className="list-disc list-outside space-y-2 pl-5 text-muted-foreground text-lg pt-4">
+                        <ul className="list-disc list-outside space-y-2 pl-5 text-muted-foreground text-base sm:text-lg pt-4">
                             <li>
                                 <span className="font-semibold text-foreground">First Installment:</span> 50% – paid within the first two weeks of the term
                             </li>
@@ -180,10 +180,10 @@ export default function FeeStructure() {
                         </ul>
 
                         <div className="pt-4 border-t">
-                            <h3 className="text-2xl font-bold font-heading text-primary mb-2">
+                            <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary mb-2">
                                 Payment details:
                             </h3>
-                            <p className="text-xl font-medium">
+                            <p className="text-base sm:text-lg lg:text-xl font-medium break-words">
                                 Paybill no. <span className="font-bold text-foreground">542542</span> | Account no. <span className="font-bold text-foreground">636747</span>
                             </p>
                         </div>

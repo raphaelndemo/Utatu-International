@@ -25,10 +25,10 @@ export default async function PostsPage() {
     return (
         <div className="flex flex-col min-h-screen">
             {/* Hero Section */}
-            <section className="relative py-20 bg-primary text-primary-foreground">
-                <div className="container">
-                    <h1 className="text-4xl md:text-5xl font-bold font-heading mb-4">Latest Posts</h1>
-                    <p className="text-xl text-primary-foreground/90 max-w-2xl">
+            <section className="relative py-12 sm:py-16 md:py-20 bg-primary text-primary-foreground">
+                <div className="container px-4">
+                    <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading mb-4">Latest Posts</h1>
+                    <p className="text-base sm:text-lg md:text-xl text-primary-foreground/90 max-w-2xl">
                         Stay updated with the latest news, insights, and stories from Utatu International School.
                     </p>
                 </div>

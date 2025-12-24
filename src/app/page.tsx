@@ -78,24 +78,24 @@ export default async function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[900px] flex items-center justify-center bg-primary text-primary-foreground ` ">
+      <section className="relative h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] flex items-center justify-center bg-primary text-primary-foreground">
         <div className="absolute inset-0 bg-black/40 z-10" />
         {/* Placeholder for Hero Image */}
         <div className="absolute inset-0 bg-[url('/images/child_on_a_laptop.jpg')] bg-cover bg-center" />
 
-        <div className="relative z-20 container text-center space-y-6">
-          <h1 className="text-4xl md:text-6xl font-bold font-heading tracking-tight">
-            Welcome to Utatu International School <br />
+        <div className="relative z-20 container text-center space-y-4 sm:space-y-6 px-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight">
+            Welcome to Utatu International School <br className="hidden sm:block" />
             <TypewriterTitle />
           </h1>
-          <p className="text-xl md:text-2xl max-w-2xl mx-auto text-primary-foreground/90">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-primary-foreground/90 px-4">
             Qualified Teaching Staff providing a world-class Cambridge education.
           </p>
-          <div className="flex gap-4 justify-center">
-            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto" asChild>
               <Link href="/contact">Enroll Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary" asChild>
+            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto" asChild>
               <Link href="/about">Learn More</Link>
             </Button>
           </div>
@@ -156,7 +156,7 @@ export default async function Home() {
           <ScrollArea className="w-full whitespace-nowrap rounded-md border">
             <div className="flex w-max space-x-4 p-4">
               {schools.map((school) => (
-                <Card key={school.title} className="w-[350px] shrink-0 group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 whitespace-normal bg-primary text-primary-foreground p-0 gap-0">
+                <Card key={school.title} className="w-[280px] sm:w-[320px] md:w-[350px] shrink-0 group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 whitespace-normal bg-primary text-primary-foreground p-0 gap-0">
                   <div className="relative h-56 w-full overflow-hidden">
                     <Image
                       src={school.image}
@@ -196,11 +196,11 @@ export default async function Home() {
             Experience a holistic education that prepares your child for a bright future.
             Apply today and become part of the Utatu family.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto" asChild>
               <Link href="/contact">Apply Now</Link>
             </Button>
-            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary" asChild>
+            <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto" asChild>
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>
@@ -212,9 +212,9 @@ export default async function Home() {
         <div className="container grid grid-cols-1 lg:grid-cols-3 gap-12">
           {/* Latest Posts */}
           <div className="lg:col-span-2">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-3xl font-bold font-heading text-primary">Latest Posts</h2>
-              <Button variant="outline" asChild>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-primary">Latest Posts</h2>
+              <Button variant="outline" className="w-full sm:w-auto" asChild>
                 <Link href="/posts">View All</Link>
               </Button>
             </div>
@@ -247,9 +247,9 @@ export default async function Home() {
 
           {/* Upcoming Events */}
           <div>
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-3xl font-bold font-heading text-primary">Upcoming Events</h2>
-              <Button variant="outline" size="sm" asChild>
+            <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
+              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-primary">Upcoming Events</h2>
+              <Button variant="outline" size="sm" className="w-full sm:w-auto" asChild>
                 <Link href="#">View All</Link>
               </Button>
             </div>
