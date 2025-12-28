@@ -54,11 +54,9 @@ export function Header() {
 
   const about = [
     { title: "Who We Are", href: "/about#who-we-are" },
-    { title: "Our Values", href: "/about#our-values" },
-    { title: "Our Mission", href: "/about#our-mission" },
-    { title: "Our Vision", href: "/about#our-vision" },
-    { title: "Our Goals", href: "/about#our-goals" },
-    { title: "Our Team", href: "/about#our-team" },
+    { title: "Why Choose Us", href: "/about#why-choose-us" },
+    { title: "Co-Curricular Activities", href: "/co-curricular-activities" },
+
   ];
 
   return (
@@ -169,8 +167,8 @@ export function Header() {
 
             <SheetContent side="right" className="w-[85vw] sm:w-[400px]">
               <div className="mt-8 flex flex-col gap-6 h-[calc(100vh-4rem)] overflow-y-auto pb-8">
-                <Link 
-                  href="/" 
+                <Link
+                  href="/"
                   onClick={() => setIsOpen(false)}
                   className="text-base font-semibold hover:text-primary transition-colors py-2 border-b border-border/40"
                 >
@@ -214,16 +212,16 @@ export function Header() {
                   </div>
                 </div>
 
-                <Link 
-                  href="/fee-structure" 
+                <Link
+                  href="/fee-structure"
                   onClick={() => setIsOpen(false)}
                   className="text-base font-semibold hover:text-primary transition-colors py-2 border-t border-border/40 pt-4"
                 >
                   Fee structure
                 </Link>
 
-                <Link 
-                  href="/contact" 
+                <Link
+                  href="/contact"
                   onClick={() => setIsOpen(false)}
                   className="text-base font-semibold hover:text-primary transition-colors py-2"
                 >

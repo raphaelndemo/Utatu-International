@@ -50,12 +50,7 @@ export default function ContactPage() {
                             </CardContent>
                         </Card>
 
-                        <div className="h-64 bg-muted rounded-lg overflow-hidden relative">
-                            {/* Placeholder for Map */}
-                            <div className="absolute inset-0 flex items-center justify-center text-muted-foreground bg-gray-200">
-                                Map Integration Placeholder
-                            </div>
-                        </div>
+
                     </div>
 
                     {/* Contact Form */}
@@ -95,6 +90,22 @@ export default function ContactPage() {
                         </form>
                     </div>
                 </div>
+            </div>
+
+            {/* Google Map Section */}
+            <div className="mt-20 w-full h-[450px] bg-muted rounded-lg overflow-hidden shadow-lg">
+                <iframe
+                    width="100%"
+                    height="100%"
+                    id="gmap_canvas"
+                    src="https://maps.google.com/maps?q=Karen%20Triangle%20Estate%20Nairobi&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    frameBorder="0"
+                    scrolling="no"
+                    marginHeight={0}
+                    marginWidth={0}
+                    className="w-full h-full"
+                    title="Utatu International School Location"
+                ></iframe>
             </div>
         </div>
     );

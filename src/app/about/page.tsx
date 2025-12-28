@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { GraduationCap, UserCog, Wallet, Globe } from "lucide-react";
 
 export default function AboutPage() {
     return (
@@ -55,8 +56,8 @@ export default function AboutPage() {
 
             {/* Who We Are Section */}
             <section className="py-24 relative overflow-hidden">
-                
-                
+
+
 
                 <div className="container relative z-10 px-4 mx-auto">
 
@@ -116,6 +117,111 @@ export default function AboutPage() {
                                     <li>Community development and servanthood</li>
                                     <li>Integrity</li>
                                 </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Why Choose Us Section - Dark Template Style */}
+            <section id="why-choose-us" className="bg-primary py-24 relative overflow-hidden text-primary-foreground">
+                {/* Subtle Background Pattern */}
+                <div className="absolute inset-0 opacity-10 pointer-events-none">
+                    <div className="absolute top-0 left-0 w-full h-full bg-[linear-gradient(to_right,#ffffff_1px,transparent_1px),linear-gradient(to_bottom,#ffffff_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)]"></div>
+                </div>
+
+                <div className="container px-4 mx-auto relative z-10">
+                    <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
+                        {/* Right Content (Order 2 on mobile, 1 on desktop if we want to match template strictly? Template has images on left. So Order 1 is images) */}
+
+                        {/* Left Side - Image Collage */}
+                        <div className="w-full lg:w-1/2 relative h-[600px] lg:h-[700px]">
+                            {/* Image 1: Top Right */}
+                            <div className="absolute top-0 right-4 sm:right-8 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500">
+                                <Image
+                                    src="/images/online (1).jpg"
+                                    alt="Senior High Student"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* Image 2: Middle Left */}
+                            <div className="absolute top-[30%] left-0 lg:left-0 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-20 transform hover:scale-105 transition-transform duration-500 border-4 border-primary">
+                                <Image
+                                    src="/images/online (2).jpg"
+                                    alt="Happy Online Student"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+
+                            {/* Image 3: Bottom Right */}
+                            <div className="absolute bottom-0 right-4 sm:right-8 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500">
+                                <Image
+                                    src="/images/online (3).jpg"
+                                    alt="Child on Laptop"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Right Side - Content */}
+                        <div className="w-full lg:w-1/2 space-y-12">
+                            <div>
+                                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight">
+                                    Why Choose Utatu International School?
+                                </h2>
+                                <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl">
+                                    Empowering the next generation with world-class education, flexibility, and personalized care.
+                                </p>
+                            </div>
+
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
+                                {/* Item 1 */}
+                                <div className="space-y-4">
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm text-secondary">
+                                        <GraduationCap className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold font-heading">Cambridge IGCSE Online Curriculum</h3>
+                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                        Internationally recognized Cambridge IGCSE education delivered through a structured, high-quality online homeschooling program.
+                                    </p>
+                                </div>
+
+                                {/* Item 2 */}
+                                <div className="space-y-4">
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm text-secondary">
+                                        <UserCog className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold font-heading">Personalized & Flexible Learning</h3>
+                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                        Individualized attention, flexible schedules, and self-paced learning designed to fit each student’s ability, lifestyle, and goals.
+                                    </p>
+                                </div>
+
+                                {/* Item 3 */}
+                                <div className="space-y-4">
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm text-secondary">
+                                        <Wallet className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold font-heading">Affordable, Cost-Effective Homeschooling</h3>
+                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                        Premium international education without extra costs like transport, uniforms, or boarding—quality education made accessible.
+                                    </p>
+                                </div>
+
+                                {/* Item 4 */}
+                                <div className="space-y-4">
+                                    <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm text-secondary">
+                                        <Globe className="w-6 h-6" />
+                                    </div>
+                                    <h3 className="text-xl font-bold font-heading">Inclusive & Globally Accessible Education</h3>
+                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                        Learn from anywhere in the world with full academic support, including for students with special learning needs.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
