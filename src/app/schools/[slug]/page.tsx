@@ -4,47 +4,47 @@ import Link from "next/link";
 import Image from "next/image";
 
 // School data with corresponding images
-const schoolsData: Record<string, { 
-    title: string; 
-    description: string; 
+const schoolsData: Record<string, {
+    title: string;
+    description: string;
     content: string;
     image: string;
 }> = {
     "special-needs-education": {
         title: "Special Needs Education",
         description: "Equality and inclusivity in learning",
-        content: "special-needs-detailed", 
-        image: "/images/special-needs.jpg",
+        content: "special-needs-detailed",
+        image: "/images/special-needs.webp",
     },
     "foundation-stage": {
         title: "Foundation Stage",
         description: "Ages 3-5: Building Strong Foundations",
         content: "foundation-stage-detailed",
-        image: "/images/foundation.jpg",
+        image: "/images/foundation.webp",
     },
     "preparatory-school": {
         title: "Preparatory School",
         description: "Year 1-6: A strong academic foundation",
         content: "preparatory-school-detailed",
-        image: "/images/preparatory.jpg",
+        image: "/images/preparatory.webp",
     },
     "junior-high-school": {
         title: "Junior High School",
         description: "Year 7-9: A Well-Rounded Curriculum",
         content: "junior-high-school-detailed",
-        image: "/images/online-homeschooling.jpg",
+        image: "/images/online-homeschooling.webp",
     },
     "senior-high-school": {
         title: "Senior High School",
         description: "Year 10-11: A Foundation for Global Success",
         content: "senior-high-school-detailed",
-        image: "/images/senior.jpg",
+        image: "/images/senior.webp",
     },
     "international-advanced-school": {
         title: "International Advanced School",
         description: "Year 12-13: Your launchpad to University",
         content: "international-advanced-school-detailed",
-        image: "/images/international.jpg",
+        image: "/images/international.webp",
     },
 };
 
@@ -82,7 +82,7 @@ export default async function SchoolPage({
                             fill
                             className="object-cover"
                             priority
-                            unoptimized
+                            sizes="(max-width: 1024px) 100vw, 800px"
                         />
                     </div>
 
@@ -247,7 +247,7 @@ export default async function SchoolPage({
                             {/* Key Benefits */}
                             <div className="mb-12">
                                 <h2 className="text-3xl font-bold font-heading mb-6">Key benefits of the UIS Foundation Stage include:</h2>
-                                
+
                                 <div className="space-y-6">
                                     <div className="bg-muted/50 rounded-lg p-6 border-l-4 border-primary">
                                         <h3 className="text-xl font-semibold mb-3">
@@ -368,7 +368,7 @@ export default async function SchoolPage({
                                 <p className="leading-relaxed">
                                     To measure progress and identify areas for improvement, the Preparatory School incorporates regular assessments. These evaluations serve as valuable tools for both students and teachers, informing instructional decisions and celebrating achievements.
                                 </p>
-                </div>
+                            </div>
 
                             {/* Conclusion */}
                             <div className="mb-8 bg-primary/5 rounded-lg p-6 border border-primary/20">
@@ -529,7 +529,7 @@ export default async function SchoolPage({
                                 </p>
                             </div>
 
-                            
+
                         </div>
                     ) : school.content === "international-advanced-school-detailed" ? (
                         <div className="prose prose-lg max-w-none">
@@ -594,12 +594,12 @@ export default async function SchoolPage({
                             </div>
                         </div>
                     ) : (
-                <div className="prose prose-lg max-w-none">
+                        <div className="prose prose-lg max-w-none">
                             <p className="leading-relaxed mb-5">{school.content}</p>
                             <p className="leading-relaxed mb-5">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                </div>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
                     )}
 
                     {/* Action Buttons */}
@@ -630,7 +630,7 @@ export default async function SchoolPage({
                                         alt={item.title}
                                         fill
                                         className="object-cover group-hover:scale-105 transition"
-                                        unoptimized
+                                        sizes="96px"
                                     />
                                 </div>
 

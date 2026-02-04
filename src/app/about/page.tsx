@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { GraduationCap, UserCog, Wallet, Globe } from "lucide-react";
+import { TeamSection } from "@/components/team-section";
+import { GoogleReviews } from "@/components/google-reviews";
 
 export default function AboutPage() {
     return (
@@ -41,11 +43,12 @@ export default function AboutPage() {
                     <div className="w-full lg:w-1/2 relative min-h-[300px] sm:min-h-[400px] lg:min-h-full">
                         <div className="absolute inset-0 w-full h-full [clip-path:polygon(0_0,100%_0,100%_100%,0%_100%)] lg:[clip-path:polygon(10%_0,100%_0,100%_100%,0%_100%)]">
                             <Image
-                                src="/images/online_studies.jpg"
+                                src="/images/online_studies.webp"
                                 alt="Student reading or studying"
                                 fill
                                 className="object-cover"
                                 priority
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                             {/* Overlay for better text contrast if needed or just aesthetic tint */}
                             <div className="absolute inset-0 bg-primary/10 mix-blend-multiply" />
@@ -66,10 +69,11 @@ export default function AboutPage() {
                         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
                             <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-[4px] md:border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
                                 <Image
-                                    src="/images/preparatory.jpg"
+                                    src="/images/preparatory.webp"
                                     alt="Student representing our mission"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 768px) 192px, 256px"
                                 />
                             </div>
                             <div className="space-y-3 md:space-y-4">
@@ -84,10 +88,11 @@ export default function AboutPage() {
                         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
                             <div className="relative w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-full border-[4px] md:border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0 -mt-2 md:-mt-4 lg:-mt-8">
                                 <Image
-                                    src="/images/senior_high.jpg"
+                                    src="/images/senior_high.webp"
                                     alt="Student representing our vision"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 768px) 192px, 256px"
                                 />
                             </div>
                             <div className="space-y-3 md:space-y-4">
@@ -102,10 +107,11 @@ export default function AboutPage() {
                         <div className="flex flex-col items-center text-center space-y-4 md:space-y-6">
                             <div className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 rounded-full border-[4px] md:border-[6px] border-primary/10 overflow-hidden shadow-2xl shrink-0">
                                 <Image
-                                    src="/images/girl_reading.png"
+                                    src="/images/girl_reading.webp"
                                     alt="Student representing our core values"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 768px) 192px, 256px"
                                 />
                             </div>
                             <div className="space-y-3 md:space-y-4">
@@ -123,6 +129,9 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/* Team Section */}
+            <TeamSection />
+
             {/* Why Choose Us Section - Dark Template Style */}
             <section id="why-choose-us" className="bg-primary py-24 relative overflow-hidden text-primary-foreground">
                 {/* Subtle Background Pattern */}
@@ -139,30 +148,33 @@ export default function AboutPage() {
                             {/* Image 1: Top Right */}
                             <div className="absolute top-0 right-4 sm:right-8 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500">
                                 <Image
-                                    src="/images/online (1).jpg"
+                                    src="/images/online (1).webp"
                                     alt="Senior High Student"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 640px) 224px, 288px"
                                 />
                             </div>
 
                             {/* Image 2: Middle Left */}
                             <div className="absolute top-[30%] left-0 lg:left-0 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-20 transform hover:scale-105 transition-transform duration-500 border-4 border-primary">
                                 <Image
-                                    src="/images/online (2).jpg"
+                                    src="/images/online (2).webp"
                                     alt="Happy Online Student"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 640px) 224px, 288px"
                                 />
                             </div>
 
                             {/* Image 3: Bottom Right */}
                             <div className="absolute bottom-0 right-4 sm:right-8 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500">
                                 <Image
-                                    src="/images/online (3).jpg"
+                                    src="/images/online (3).webp"
                                     alt="Child on Laptop"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 640px) 224px, 288px"
                                 />
                             </div>
                         </div>
@@ -227,6 +239,9 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Google Reviews Section */}
+            <GoogleReviews />
 
             <div className="container py-20">
                 <div className="max-w-4xl mx-auto space-y-12">

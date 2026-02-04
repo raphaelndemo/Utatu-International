@@ -143,7 +143,7 @@ export default function FeeStructure() {
                 <div className="space-y-8">
                     <div className="relative h-[300px] md:h-[400px] w-full rounded-lg overflow-hidden shadow-xl">
                         <Image
-                            src="/images/focus.jpg"
+                            src="/images/focus.webp"
                             alt="Parent and child interaction"
                             fill
                             className="object-cover"

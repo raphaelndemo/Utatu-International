@@ -17,31 +17,31 @@ export default async function Home() {
       title: "Foundation Stage - (Kindergarten 1-3)",
       description: "Kindergarten 1-3. A playful start to learning.",
       href: "/schools/foundation-stage",
-      image: "/images/kindergarten.jpg",
+      image: "/images/kindergarten.webp",
     },
     {
       title: "Preparatory School - (Year 1-6)",
       description: "Year 1-6. Building core skills and confidence.",
       href: "/schools/preparatory-school",
-      image: "/images/preparatory.jpg",
+      image: "/images/preparatory.webp",
     },
     {
       title: "Junior High School - (Year 7-9)",
       description: "Year 7-9. Fostering independence and inquiry.",
       href: "/schools/junior-high-school",
-      image: "/images/online-homeschooling.jpg",
+      image: "/images/online-homeschooling.webp",
     },
     {
       title: "Senior High School - (Year 10-11)",
       description: "Year 10-11. Academic excellence and leadership.",
       href: "/schools/senior-high-school",
-      image: "/images/senior-high.jpg",
+      image: "/images/senior-high.webp",
     },
     {
       title: "Special Needs Education",
       description: "Inclusive education tailored to individual needs.",
       href: "/schools/special-needs-education",
-      image: "/images/special-needs.jpg",
+      image: "/images/special-needs.webp",
     },
 
   ];
@@ -81,7 +81,14 @@ export default async function Home() {
       <section className="relative h-[600px] sm:h-[700px] md:h-[800px] lg:h-[900px] flex items-center justify-center bg-primary text-primary-foreground">
         <div className="absolute inset-0 bg-black/40 z-10" />
         {/* Placeholder for Hero Image */}
-        <div className="absolute inset-0 bg-[url('/images/child_on_a_laptop.jpg')] bg-cover bg-center" />
+        <Image
+          src="/images/child_on_a_laptop.webp"
+          alt="Child on a laptop"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
 
         <div className="relative z-20 container text-center space-y-4 sm:space-y-6 px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight">
@@ -135,10 +142,11 @@ export default async function Home() {
           </div>
           <div className="relative h-[300px] lg:h-[400px] w-full">
             <Image
-              src="/images/parent_with_child_interaction.jpg"
+              src="/images/parent_with_child_interaction.webp"
               alt="Student reading or studying"
               fill
               className="object-cover rounded-lg shadow-xl"
+              sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
         </div>
@@ -163,6 +171,7 @@ export default async function Home() {
                       alt={school.title}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 350px, 350px"
                     />
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/0 transition-colors duration-300" />
                   </div>
@@ -227,7 +236,8 @@ export default async function Home() {
                       alt={post.title}
                       fill
                       className="object-cover"
-                      unoptimized
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                      unoptimized={true} // Sanity images are already optimized and some environments resolve Sanity CDN to private IPs, causing Next.js errors
                     />
                   </div>
                   <div className="flex-1 p-6">

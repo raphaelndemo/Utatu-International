@@ -65,11 +65,13 @@ export function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2 min-w-0">
           <Image
-            src="/images/Logo_Utatu__Main.png"
+            src="/images/Logo_Utatu__Main.webp"
             alt="Utatu International Logo"
             width={150}
             height={50}
             className="h-8 sm:h-10 w-auto object-contain lg:h-12 flex-shrink-0"
+            priority
+            sizes="150px"
           />
           <span className="text-base sm:text-lg md:text-xl font-bold font-heading text-primary lg:text-2xl truncate">
             Utatu International

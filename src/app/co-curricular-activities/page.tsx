@@ -7,62 +7,62 @@ export default function CoCurricularActivitiesPage() {
         {
             title: "Chess Club",
             description: "The primary goal of the chess club is to cultivate a vibrant community where members can enhance their chess skills, engage in friendly competition, and foster inclusivity, ultimately promoting a love for the game among individuals of all backgrounds and skill levels.",
-            image: "/images/Chess.jpg"
+            image: "/images/Chess.webp"
         },
         {
             title: "Bible Club",
             description: "Overall, the goal of this Bible club is to provide a nurturing and supportive environment where members can grow spiritually, deepen their understanding of the Bible, and build meaningful connections with others who share their faith. This is achieved through facilitating regular Bible study sessions where members can delve into scripture, discuss its meaning, and apply its teachings to their lives. Encouraging members to engage in acts of service and outreach to their community, reflecting the values and teachings found in the Bible. Offering resources and guest speakers to educate members on various aspects of the Bible, theology, and Christian living, promoting a deeper understanding of their faith.",
-            image: "/images/Bible.jpg"
+            image: "/images/Bible.webp"
         },
         {
             title: "Music Club",
             description: "Overall, the goal of the music club is to offer a supportive community to its members where they can experience growth as musicians in terms of skill and personal growth, share their love for music, and inspire each other through creativity and collaboration.",
-            image: "/images/music.jpg"
+            image: "/images/music.webp"
         },
         {
             title: "Investments / Young Entrepreneur Club",
             description: "The investment club provides a platform for members to learn about investing, collaborate on investment opportunities, and work towards building wealth and financial independence together. It empowers members to take control of their financial futures, make informed investment decisions, and achieve their long-term financial goals.",
-            image: "/images/Investment.jpg"
+            image: "/images/Investment.webp"
         },
         {
             title: "Digital Art & Design Club",
             description: "The art club provides a nurturing and inspiring environment where members can explore their creativity, develop their artistic skills, and build meaningful connections with fellow artists.",
-            image: "/images/DigitalArts.jpg"
+            image: "/images/DigitalArts.webp"
         },
         {
             title: "Content Creators Club",
             description: "The goal of a content creators club is to empower members to unleash their creativity, develop their skills, and build a thriving community of like-minded individuals passionate about producing engaging and impactful content.",
-            image: "/images/content creation.jpg"
+            image: "/images/content creation.webp"
         },
         {
             title: "Gaming Club",
             description: "Goals and purpose of the Gamers Club is to be able to learn new video games and work with other students after school.",
-            image: "/images/gaming.jpg"
+            image: "/images/gaming.webp"
         },
         {
             title: "Film and Drama Club",
             description: "Film and Drama Club helps students to know the various scopes in these fields and use their talents to build quality products that will be an asset for society and its people. This will promote and further the appreciation of motion picture/film. Build self-confidence, imagination, creativity and communication skills among students.",
-            image: "/images/film.jpg"
+            image: "/images/film.webp"
         },
         {
             title: "Debate Club",
             description: "The debate club gives pupils of all abilities a fun way of developing their oracy skills. The primary goal of a debate is for students to generate effective critical thinking into primary issues in the given topic.",
-            image: "/images/Debate.jpg"
+            image: "/images/Debate.webp"
         },
         {
             title: "Stem Club",
             description: "STEM is an acronym for Science, Technology, Engineering and Math education. We focus on these areas together not only because the skills and knowledge in each discipline are essential for student success, but also because these fields are deeply intertwined in the real world.",
-            image: "/images/STEM.jpg"
+            image: "/images/STEM.webp"
         },
         {
             title: "Wildlife Club",
             description: "The aim of the WCG is to help young learn the knowledge, skills and attitudes they need to help conserve their wildlife and environment. The WCG aims to teach young these skills, knowledge and attitudes in the following ways:\n\n• Club members gain knowledge and awareness of the environment, environmental problems and solutions through lectures, talks, seminars, slide/film/video shows and cultural and drama performances.\n\n• Club members gain important skills such as problem solving and working together through role-play activities, playing games and implementing projects.\n\n• Club members develop good attitudes and values, interest and concern for nature and a commitment to protecting them through nature walks or hikes, bird watching, workshops, camps and field trips and being actively encouraged to enjoy and care about wildlife and the environment.",
-            image: "/images/Wildlife.jpg"
+            image: "/images/Wildlife.webp"
         },
         {
             title: "Scouts Club",
             description: "Our Scouts Club is devoted to facilitating the growth and advancement of our learners in meaningful ways, equipping them to have a beneficial effect on the school and the wider community.Through the Scouts club, we are passionate about our mission to provide our learners with the tools they need to become successful and responsible citizens.",
-            image: "/images/Scouts.jpg"
+            image: "/images/Scouts.webp"
         }
     ];
 
@@ -92,6 +92,7 @@ export default function CoCurricularActivitiesPage() {
                                     alt={club.title}
                                     fill
                                     className="object-cover transform hover:scale-105 transition-transform duration-700"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                 />
                             </div>
                         </div>
@@ -116,10 +117,11 @@ export default function CoCurricularActivitiesPage() {
                         <div className="w-full lg:w-1/2">
                             <div className="relative h-[300px] sm:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                                 <Image
-                                    src="/images/Sports (2).jpg"
+                                    src="/images/Sports (2).webp"
                                     alt="Sports Day"
                                     fill
                                     className="object-cover"
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                 />
                             </div>
                         </div>
@@ -141,10 +143,11 @@ export default function CoCurricularActivitiesPage() {
                     <div className="w-full lg:w-1/2">
                         <div className="relative h-[300px] sm:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
                             <Image
-                                src="/images/Camping.jpg"
+                                src="/images/Camping.webp"
                                 alt="Summer Camps"
                                 fill
                                 className="object-cover"
+                                sizes="(max-width: 1024px) 100vw, 50vw"
                             />
                         </div>
                     </div>
@@ -169,7 +172,7 @@ export default function CoCurricularActivitiesPage() {
                 </div>
             </section>
 
-            
+
 
         </div>
     );
