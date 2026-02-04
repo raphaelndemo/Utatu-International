@@ -4,7 +4,7 @@ import Typewriter from "typewriter-effect";
 
 export function TypewriterTitle() {
     return (
-        <span className="inline-block text-secondary">
+        <span className="inline-block text-secondary min-h-[1.5em]">
             <Typewriter
                 options={{
                     strings: ["Education Redefined", "Ignite Your Potential", ""],

@@ -2,8 +2,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { GraduationCap, UserCog, Wallet, Globe } from "lucide-react";
-import { TeamSection } from "@/components/team-section";
-import { GoogleReviews } from "@/components/google-reviews";
+import dynamic from "next/dynamic";
+const TeamSection = dynamic(() => import("@/components/team-section").then((mod) => mod.TeamSection));
+const GoogleReviews = dynamic(() => import("@/components/google-reviews").then((mod) => mod.GoogleReviews));
 
 export default function AboutPage() {
     return (
