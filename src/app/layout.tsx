@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   title: "Utatu International School",
   description: "World-class Cambridge education in Kenya",
   manifest: "/manifest.json",
-  manifest: "/manifest.json",
+
 };
 
 export const viewport: Viewport = {
