@@ -167,70 +167,90 @@ export function Header() {
               </Button>
             </SheetTrigger>
 
-            <SheetContent side="right" className="w-[85vw] sm:w-[400px]">
-              <div className="mt-8 flex flex-col gap-6 h-[calc(100vh-4rem)] overflow-y-auto pb-8">
-                <Link
-                  href="/"
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-semibold hover:text-primary transition-colors py-2 border-b border-border/40"
-                >
-                  Home
+            <SheetContent side="right" className="w-[85vw] sm:w-[400px] flex flex-col p-0 border-l border-border/40">
+              {/* Header with Logo */}
+              <div className="p-6 border-b bg-muted/30">
+                <Link href="/" onClick={() => setIsOpen(false)} className="flex items-center gap-2">
+                  <Image
+                    src="/images/Logo_Utatu__Main.webp"
+                    alt="Utatu Logo"
+                    width={40}
+                    height={40}
+                    className="h-10 w-auto object-contain"
+                  />
+                  <span className="font-heading font-bold text-lg leading-none text-primary">Utatu International</span>
                 </Link>
+              </div>
 
-                <div className="space-y-3">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider pb-2 border-b border-border/20">About Us</p>
-                  <div className="space-y-1">
+              {/* Scrollable Content */}
+              <div className="flex-1 overflow-y-auto">
+                <div className="flex flex-col py-6">
+                  <Link
+                    href="/"
+                    onClick={() => setIsOpen(false)}
+                    className="px-6 py-3 text-lg font-heading font-bold text-primary hover:bg-secondary/10 hover:text-secondary transition-colors"
+                  >
+                    Home
+                  </Link>
+
+                  <div className="py-2">
+                    <div className="px-6 py-2">
+                      <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">About Us</h4>
+                    </div>
                     {about.map((item) => (
                       <Link
                         key={item.title}
                         href={item.href}
-                        className="pl-4 block text-sm py-2 rounded-md hover:bg-accent hover:text-accent-foreground transition-colors"
+                        className="block px-6 py-2.5 text-sm font-medium text-foreground/80 hover:bg-muted hover:text-primary transition-colors border-l-2 border-transparent hover:border-secondary ml-6"
                         onClick={() => setIsOpen(false)}
                       >
                         {item.title}
                       </Link>
                     ))}
                   </div>
-                </div>
 
-                <div className="space-y-3">
-                  <p className="text-xs font-bold text-muted-foreground uppercase tracking-wider pb-2 border-b border-border/20">Our Schools</p>
-                  <div className="space-y-1">
+                  <div className="py-2">
+                    <div className="px-6 py-2">
+                      <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-2">Our Schools</h4>
+                    </div>
                     {schools.map((school) => (
                       <Link
                         key={school.title}
                         href={school.href}
-                        className="pl-4 block group py-2 rounded-md hover:bg-accent transition-colors"
+                        className="block px-6 py-3 group hover:bg-muted transition-colors border-l-2 border-transparent hover:border-secondary ml-6"
                         onClick={() => setIsOpen(false)}
                       >
                         <div className="text-sm font-semibold group-hover:text-primary transition-colors">
                           {school.title}
                         </div>
-                        <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+                        <p className="text-xs text-muted-foreground mt-0.5 line-clamp-1">
                           {school.description}
                         </p>
                       </Link>
                     ))}
                   </div>
+
+                  <Link
+                    href="/fee-structure"
+                    onClick={() => setIsOpen(false)}
+                    className="px-6 py-3 text-lg font-heading font-bold text-primary hover:bg-secondary/10 hover:text-secondary transition-colors mt-2"
+                  >
+                    Fee Structure
+                  </Link>
+
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className="px-6 py-3 text-lg font-heading font-bold text-primary hover:bg-secondary/10 hover:text-secondary transition-colors"
+                  >
+                    Contact
+                  </Link>
                 </div>
+              </div>
 
-                <Link
-                  href="/fee-structure"
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-semibold hover:text-primary transition-colors py-2 border-t border-border/40 pt-4"
-                >
-                  Fee structure
-                </Link>
-
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="text-base font-semibold hover:text-primary transition-colors py-2"
-                >
-                  Contact
-                </Link>
-
-                <Button asChild className="mt-4 bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full">
+              {/* Footer CTA */}
+              <div className="p-6 border-t bg-muted/30">
+                <Button asChild size="lg" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg">
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Apply Now
                   </Link>

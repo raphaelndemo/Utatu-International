@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
@@ -17,6 +17,12 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Utatu International School",
   description: "World-class Cambridge education in Kenya",
+  manifest: "/manifest.json",
+  manifest: "/manifest.json",
+};
+
+export const viewport: Viewport = {
+  themeColor: "#001A00",
 };
 
 export default function RootLayout({

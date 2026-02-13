@@ -9,6 +9,7 @@ import { client } from "@/lib/sanity/client";
 import { postsQuery, eventsQuery } from "@/lib/sanity/queries";
 import { SanityPost, SanityEvent } from "@/lib/sanity/types";
 import { urlFor } from "@/lib/sanity/image";
+import { GallerySection } from "@/components/gallery-section";
 
 export default async function Home() {
   const schools = [
@@ -113,13 +114,13 @@ export default async function Home() {
       <section className="py-20 bg-background ">
         <div className="container grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary">
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-2">
               Educational Excellence
             </h2>
-            <h3 className="text-2xl font-bold text-foreground">
+            <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
               Get the best Cambridge curriculum
             </h3>
-            <div className="space-y-4 text-muted-foreground text-md leading-relaxed">
+            <div className="space-y-4 text-muted-foreground text-md leading-relaxed mt-6">
               <p>
                 <span className="font-semibold text-primary">Utatu</span> is one of the best homeschooling international schools in
                 Kenya offering a world-class Cambridge Curriculum. We offer
@@ -136,7 +137,7 @@ export default async function Home() {
                 student at a time.
               </p>
             </div>
-            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold" asChild>
+            <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold mt-4" asChild>
               <Link href="/about">Read More</Link>
             </Button>
           </div>
@@ -145,7 +146,7 @@ export default async function Home() {
               src="/images/parent_with_child_interaction.webp"
               alt="Student reading or studying"
               fill
-              className="object-cover rounded-lg shadow-xl"
+              className="object-cover shadow-xl"
               sizes="(max-width: 1024px) 100vw, 50vw"
             />
           </div>
@@ -156,7 +157,8 @@ export default async function Home() {
       <section className="py-20 bg-muted/30">
         <div className="container">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold font-heading text-primary mb-4">Our Schools</h2>
+            <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-2">Our Schools</h2>
+            <h3 className="text-3xl md:text-4xl font-light font-heading text-primary mb-4">Academic Progression</h3>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               We offer a comprehensive curriculum catering to students at every stage of their educational journey.
             </p>
@@ -164,7 +166,7 @@ export default async function Home() {
           <ScrollArea className="w-full whitespace-nowrap rounded-md border">
             <div className="flex w-max space-x-4 p-4">
               {schools.map((school) => (
-                <Card key={school.title} className="w-[280px] sm:w-[320px] md:w-[350px] shrink-0 group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 whitespace-normal bg-primary text-primary-foreground p-0 gap-0">
+                <Card key={school.title} className="w-[280px] sm:w-[320px] md:w-[350px] shrink-0 group overflow-hidden border-none shadow-md hover:shadow-xl transition-all duration-300 whitespace-normal bg-primary text-primary-foreground p-0 gap-0 rounded-none">
                   <div className="relative h-56 w-full overflow-hidden">
                     <Image
                       src={school.image}
@@ -197,10 +199,15 @@ export default async function Home() {
           </ScrollArea>
         </div>
       </section>
+
+      {/* Gallery Section */}
+      <GallerySection />
+
       {/* CTA Section */}
       <section className="py-20 bg-primary text-primary-foreground text-center mb-20">
         <div className="container max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-6">Join Our Happy Students</h2>
+          <h2 className="text-sm font-semibold tracking-[0.2em] text-primary-foreground/80 uppercase mb-2">Admissions</h2>
+          <h3 className="text-3xl md:text-4xl font-light font-heading mb-6">Join Our Happy Students</h3>
           <p className="text-xl mb-8 text-primary-foreground/90">
             Experience a holistic education that prepares your child for a bright future.
             Apply today and become part of the Utatu family.
@@ -222,7 +229,10 @@ export default async function Home() {
           {/* Latest Posts */}
           <div className="lg:col-span-2">
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-primary">Latest Posts</h2>
+              <div>
+                <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-1">Updates</h2>
+                <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">Latest Posts</h3>
+              </div>
               <Button variant="outline" className="w-full sm:w-auto" asChild>
                 <Link href="/posts">View All</Link>
               </Button>
@@ -258,7 +268,10 @@ export default async function Home() {
           {/* Upcoming Events */}
           <div>
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 mb-8">
-              <h2 className="text-2xl sm:text-3xl font-bold font-heading text-primary">Upcoming Events</h2>
+              <div>
+                <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-1">Calendar</h2>
+                <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">Upcoming Events</h3>
+              </div>
               <Button variant="outline" size="sm" className="w-full sm:w-auto" asChild>
                 <Link href="#">View All</Link>
               </Button>

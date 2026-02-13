@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { ClubCard } from "@/components/co-curricular/club-card";
 
 export default function CoCurricularActivitiesPage() {
     const clubs = [
@@ -81,33 +81,17 @@ export default function CoCurricularActivitiesPage() {
             </section>
 
             {/* Clubs Section */}
-            <section className="container px-4 mx-auto py-20 space-y-24">
-                {clubs.map((club, index) => (
-                    <div key={club.title} className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-                        {/* Image - Left Side */}
-                        <div className="w-full lg:w-1/2">
-                            <div className="relative h-[300px] sm:h-[400px] lg:h-[450px] w-full rounded-2xl overflow-hidden shadow-xl">
-                                <Image
-                                    src={club.image}
-                                    alt={club.title}
-                                    fill
-                                    className="object-cover transform hover:scale-105 transition-transform duration-700"
-                                    sizes="(max-width: 1024px) 100vw, 50vw"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Content - Right Side */}
-                        <div className="w-full lg:w-1/2 space-y-6">
-                            <h2 className="text-3xl font-bold font-heading text-primary border-l-4 border-secondary pl-4">
-                                {club.title}
-                            </h2>
-                            <div className="text-muted-foreground text-lg leading-relaxed whitespace-pre-wrap">
-                                {club.description}
-                            </div>
-                        </div>
-                    </div>
-                ))}
+            <section className="container px-4 mx-auto py-20">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {clubs.map((club) => (
+                        <ClubCard
+                            key={club.title}
+                            title={club.title}
+                            description={club.description}
+                            image={club.image}
+                        />
+                    ))}
+                </div>
             </section>
 
             {/* Sports Day Section */}
@@ -115,7 +99,7 @@ export default function CoCurricularActivitiesPage() {
                 <div className="container px-4 mx-auto">
                     <div className="flex flex-col lg:flex-row-reverse gap-8 lg:gap-16 items-center">
                         <div className="w-full lg:w-1/2">
-                            <div className="relative h-[300px] sm:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
+                            <div className="relative h-[200px] sm:h-[300px] w-full rounded-2xl overflow-hidden shadow-xl">
                                 <Image
                                     src="/images/Sports (2).webp"
                                     alt="Sports Day"
@@ -141,7 +125,7 @@ export default function CoCurricularActivitiesPage() {
             <section className="container px-4 mx-auto py-20">
                 <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
                     <div className="w-full lg:w-1/2">
-                        <div className="relative h-[300px] sm:h-[400px] w-full rounded-2xl overflow-hidden shadow-xl">
+                        <div className="relative h-[200px] sm:h-[300px] w-full rounded-2xl overflow-hidden shadow-xl">
                             <Image
                                 src="/images/Camping.webp"
                                 alt="Summer Camps"
