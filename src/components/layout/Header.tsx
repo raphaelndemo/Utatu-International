@@ -15,6 +15,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { PortalModal } from "./PortalModal";
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -56,6 +57,7 @@ export function Header() {
     { title: "Who We Are", href: "/about#who-we-are" },
     { title: "Why Choose Us", href: "/about#why-choose-us" },
     { title: "Co-Curricular Activities", href: "/co-curricular-activities" },
+    { title: "School Calendar", href: "/school-calendar" },
 
   ];
 
@@ -135,13 +137,7 @@ export function Header() {
                 </NavigationMenuContent>
               </NavigationMenuItem>
 
-              <NavigationMenuItem>
-                <Link href="/fee-structure" legacyBehavior passHref>
-                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                    Fee structure
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
+
 
               <NavigationMenuItem>
                 <Link href="/contact" legacyBehavior passHref>
@@ -152,6 +148,10 @@ export function Header() {
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
+
+          <div className="ml-4 mr-2">
+            <PortalModal />
+          </div>
 
           <Button asChild className="bg-secondary text-secondary-foreground">
             <Link href="/contact">Apply Now</Link>
@@ -230,13 +230,7 @@ export function Header() {
                     ))}
                   </div>
 
-                  <Link
-                    href="/fee-structure"
-                    onClick={() => setIsOpen(false)}
-                    className="px-6 py-3 text-lg font-heading font-bold text-primary hover:bg-secondary/10 hover:text-secondary transition-colors mt-2"
-                  >
-                    Fee Structure
-                  </Link>
+
 
                   <Link
                     href="/contact"
@@ -245,6 +239,10 @@ export function Header() {
                   >
                     Contact
                   </Link>
+
+                  <div className="px-6 py-2 mt-2 border-t border-border/40">
+                    <PortalModal />
+                  </div>
                 </div>
               </div>
 

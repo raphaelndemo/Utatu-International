@@ -217,7 +217,7 @@ export default async function Home() {
               <Link href="/contact">Apply Now</Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto" asChild>
-              <Link href="/contact">Contact Us</Link>
+              <Link href="/fee-structure">Fee Structure</Link>
             </Button>
           </div>
         </div>
@@ -272,9 +272,11 @@ export default async function Home() {
                 <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-1">Calendar</h2>
                 <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">Upcoming Events</h3>
               </div>
-              <Button variant="outline" size="sm" className="w-full sm:w-auto" asChild>
-                <Link href="#">View All</Link>
-              </Button>
+              <div className="flex gap-2">
+                <Button variant="outline" size="sm" className="w-full sm:w-auto" asChild>
+                  <Link href="/school-calendar">View Calendar</Link>
+                </Button>
+              </div>
             </div>
             <div className="space-y-6">
               {events.map((event) => (

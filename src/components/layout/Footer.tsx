@@ -22,6 +22,11 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/school-calendar" className="hover:text-secondary transition-colors">
+                                    School Calendar
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/schools/foundation-stage" className="hover:text-secondary transition-colors">
                                     Foundation Stage
                                 </Link>
