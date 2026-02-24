@@ -144,38 +144,39 @@ export default function AboutPage() {
                     <div className="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
                         {/* Right Content (Order 2 on mobile, 1 on desktop if we want to match template strictly? Template has images on left. So Order 1 is images) */}
 
-                        {/* Left Side - Image Collage */}
+                        {/* Left Side - Interlocked Image Collage */}
                         <div className="w-full lg:w-1/2 relative h-[600px] lg:h-[700px]">
-                            {/* Image 1: Top Right */}
-                            <div className="absolute top-0 right-4 sm:right-8 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500">
+
+                            {/* Image 1: Top Right - large */}
+                            <div className="absolute top-0 right-0 w-[55%] h-[48%] overflow-hidden shadow-2xl z-10 transform hover:scale-[1.02] transition-transform duration-500">
                                 <Image
                                     src="/images/online (1).webp"
                                     alt="Senior High Student"
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 640px) 224px, 288px"
+                                    sizes="(max-width: 640px) 60vw, 30vw"
                                 />
                             </div>
 
-                            {/* Image 2: Middle Left */}
-                            <div className="absolute top-[30%] left-0 lg:left-0 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-20 transform hover:scale-105 transition-transform duration-500 border-4 border-primary">
+                            {/* Image 2: Middle Left - larger, overlaps both Image 1 and 3 */}
+                            <div className="absolute top-[22%] left-0 w-[58%] h-[52%] overflow-hidden shadow-2xl z-20 transform hover:scale-[1.02] transition-transform duration-500 border-4 border-primary">
                                 <Image
                                     src="/images/online (2).webp"
                                     alt="Happy Online Student"
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 640px) 224px, 288px"
+                                    sizes="(max-width: 640px) 65vw, 32vw"
                                 />
                             </div>
 
-                            {/* Image 3: Bottom Right */}
-                            <div className="absolute bottom-0 right-4 sm:right-8 w-56 h-64 sm:w-64 sm:h-80 lg:w-72 lg:h-80 rounded-[2.5rem] overflow-hidden shadow-2xl z-10 transform hover:scale-105 transition-transform duration-500">
+                            {/* Image 3: Bottom Right - large */}
+                            <div className="absolute bottom-0 right-0 w-[55%] h-[48%] overflow-hidden shadow-2xl z-10 transform hover:scale-[1.02] transition-transform duration-500">
                                 <Image
                                     src="/images/online (3).webp"
                                     alt="Child on Laptop"
                                     fill
                                     className="object-cover"
-                                    sizes="(max-width: 640px) 224px, 288px"
+                                    sizes="(max-width: 640px) 60vw, 30vw"
                                 />
                             </div>
                         </div>
@@ -248,7 +249,7 @@ export default function AboutPage() {
                 <div className="max-w-4xl mx-auto space-y-12">
 
                     <div className="bg-muted p-8 rounded-lg text-center space-y-6">
-                        <h3 className="text-2xl font-bold font-heading">Ready to join our community?</h3>
+                        <h3 className="text-2xl font-medium font-heading tracking-wide">Ready to join our community?</h3>
                         <p className="text-muted-foreground">
                             We welcome families from all backgrounds to join the Utatu International family.
                         </p>

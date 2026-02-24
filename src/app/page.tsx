@@ -156,10 +156,16 @@ export default async function Home() {
       {/* Schools Section */}
       <section className="py-20 bg-muted/30">
         <div className="container">
-          <div className="text-center mb-12">
-            <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-2">Our Schools</h2>
-            <h3 className="text-3xl md:text-4xl font-light font-heading text-primary mb-4">Academic Progression</h3>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-12 px-4">
+            <div className="space-y-2 text-left">
+              <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase">
+                Life at Utatu
+              </h2>
+              <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
+                — OUR SCHOOLS
+              </h3>
+            </div>
+            <p className="hidden md:block text-muted-foreground max-w-xs text-sm text-right">
               We offer a comprehensive curriculum catering to students at every stage of their educational journey.
             </p>
           </div>
@@ -179,7 +185,7 @@ export default async function Home() {
                   </div>
                   <div className="flex flex-col p-6 flex-1 justify-between gap-6">
                     <div>
-                      <h3 className="text-xl font-bold font-heading text-primary-foreground mb-3">
+                      <h3 className="text-xl font-medium font-heading tracking-wide text-primary-foreground mb-3">
                         {school.title}
                       </h3>
                       <p className="text-primary-foreground/90 mb-2 line-clamp-3 text-sm leading-relaxed">

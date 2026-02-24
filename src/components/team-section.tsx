@@ -49,7 +49,7 @@ export function TeamSection() {
                     {teamMembers.map((member, index) => (
                         <div
                             key={index}
-                            className="group bg-background rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-border"
+                            className="group bg-background overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-border"
                         >
                             <div className="relative h-72 w-full overflow-hidden">
                                 <Image
