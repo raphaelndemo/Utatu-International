@@ -15,10 +15,28 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Utatu International School",
-  description: "World-class Cambridge education in Kenya",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://www.utatuinternational.com'),
+  title: {
+    template: "%s | Utatu International School",
+    default: "Utatu International School | Cambridge Education in Kenya",
+  },
+  description: "Utatu International offers a world-class Cambridge Curriculum through a flexible hybrid and online homeschooling model from Kindergarten to Year 13.",
+  keywords: ["Cambridge Curriculum Kenya", "Homeschooling Kenya", "Online International School", "IGCSE Online", "A Level Online"],
   manifest: "/manifest.json",
-
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, // e.g. "your-google-verification-code"
+    other: {
+      "msvalidate.01": [process.env.NEXT_PUBLIC_BING_VERIFICATION || ""], // Bing Webmaster Tools
+    },
+  },
+  openGraph: {
+    title: "Utatu International School",
+    description: "World-class Cambridge education in Kenya",
+    url: "https://www.utatuinternational.com",
+    siteName: "Utatu International School",
+    locale: "en_KE",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {

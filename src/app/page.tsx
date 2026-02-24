@@ -93,9 +93,11 @@ export default async function Home() {
 
         <div className="relative z-20 container text-center space-y-4 sm:space-y-6 px-4">
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold font-heading tracking-tight">
-            Welcome to Utatu International School <br className="hidden sm:block" />
-            <TypewriterTitle />
+            Welcome to Utatu International School
           </h1>
+          <div className="text-2xl sm:text-3xl md:text-4xl font-bold font-heading tracking-tight">
+            <TypewriterTitle />
+          </div>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-primary-foreground/90 px-4">
             Empower your child with a world-class Cambridge Curriculum. Personalized pacing, expert teachers, meaningful outcomes.
           </p>
@@ -214,7 +216,7 @@ export default async function Home() {
         <div className="container max-w-3xl">
           <h2 className="text-sm font-semibold tracking-[0.2em] text-primary-foreground/80 uppercase mb-2">Admissions</h2>
           <h3 className="text-3xl md:text-4xl font-light font-heading mb-6">Join Our Happy Students</h3>
-          <p className="text-xl mb-8 text-primary-foreground/90">
+          <p className="mb-8 text-primary-foreground/90">
             Experience a holistic education that prepares your child for a bright future.
             Apply today and become part of the Utatu family.
           </p>

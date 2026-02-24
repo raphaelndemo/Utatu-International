@@ -21,7 +21,7 @@ export default function AboutPage() {
                             <h3 className="text-xl md:text-2xl font-semibold text-foreground/80">
                                 A Holistic Approach to Education – Shaping futures, one student at a time.
                             </h3>
-                            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
+                            <div className="space-y-4 text-muted-foreground leading-relaxed">
                                 <p>
                                     Utatu International is a future-focused Cambridge homeschooling institution designed for families who value both academic excellence and flexibility. <br />
 
@@ -72,7 +72,7 @@ export default function AboutPage() {
                         <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
                             What makes us different?
                         </h3>
-                        <p className="text-muted-foreground text-lg leading-relaxed">
+                        <p className="text-muted-foreground leading-relaxed">
                             Utatu International combines structured Cambridge academic delivery with flexible hybrid access and individualized educator support. We bridge the gap between independence and institutional excellence.
                         </p>
                     </div>
@@ -212,7 +212,7 @@ export default function AboutPage() {
                                 <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading mb-6 leading-tight">
                                     Why Choose Utatu International School?
                                 </h2>
-                                <p className="text-primary-foreground/80 text-lg leading-relaxed max-w-xl">
+                                <p className="text-primary-foreground/80 leading-relaxed max-w-xl">
                                     Empowering the next generation with world-class education, flexibility, and personalized care.
                                 </p>
                             </div>

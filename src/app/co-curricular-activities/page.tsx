@@ -113,7 +113,7 @@ export default function CoCurricularActivitiesPage() {
                             <h2 className="text-3xl font-bold font-heading text-primary border-l-4 border-secondary pl-4">
                                 Sports Day
                             </h2>
-                            <p className="text-muted-foreground text-lg leading-relaxed">
+                            <p className="text-muted-foreground leading-relaxed">
                                 We offer various sports every Friday during the term. We also have Family Sports Day, an event where pupils, teachers, and parents come together for a day of competitive sport and other activities. We offer medals or prizes to the winners.
                             </p>
                         </div>
@@ -139,7 +139,7 @@ export default function CoCurricularActivitiesPage() {
                         <h2 className="text-3xl font-bold font-heading text-primary border-l-4 border-secondary pl-4">
                             Summer Camps
                         </h2>
-                        <div className="text-muted-foreground text-lg leading-relaxed space-y-4">
+                        <div className="text-muted-foreground leading-relaxed space-y-4">
                             <p>We offer camps during our summer breaks.</p>
                             <p className="font-semibold text-foreground">The goal of the camps are:</p>
                             <ul className="list-disc list-inside space-y-2 ml-2">

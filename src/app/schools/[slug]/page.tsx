@@ -134,7 +134,7 @@ export default async function SchoolPage({
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
 
                     {/* ===== Article ===== */}
-                    <article className="lg:col-span-8 prose prose-slate prose-lg max-w-none prose-headings:font-heading prose-headings:text-primary prose-h2:text-3xl lg:prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:border-b prose-h2:pb-4 prose-h2:border-slate-200 prose-h2:font-light prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-primary prose-h3:font-bold prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-4 prose-h4:text-slate-700 prose-p:text-slate-600 prose-p:leading-loose prose-p:mb-8 prose-p:text-lg prose-li:text-slate-600 prose-li:marker:text-secondary prose-li:leading-relaxed prose-li:text-lg prose-strong:text-slate-900 prose-strong:font-semibold prose-ul:my-8 prose-ul:space-y-3">
+                    <article className="lg:col-span-8 prose prose-slate max-w-none prose-headings:font-heading prose-headings:text-primary prose-h2:text-3xl lg:prose-h2:text-4xl prose-h2:mt-16 prose-h2:mb-8 prose-h2:border-b prose-h2:pb-4 prose-h2:border-slate-200 prose-h2:font-light prose-h3:text-2xl prose-h3:mt-10 prose-h3:mb-4 prose-h3:text-primary prose-h3:font-bold prose-h4:text-xl prose-h4:mt-8 prose-h4:mb-4 prose-h4:text-slate-700 prose-p:text-slate-600 prose-p:leading-loose prose-p:mb-8 prose-li:text-slate-600 prose-li:marker:text-secondary prose-li:leading-relaxed prose-strong:text-slate-900 prose-strong:font-semibold prose-ul:my-8 prose-ul:space-y-3">
 
                         {school.content === "special-needs-detailed" ? (<>
                             <p>
