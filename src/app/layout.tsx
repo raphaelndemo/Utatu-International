@@ -22,6 +22,9 @@ export const metadata: Metadata = {
   },
   description: "Utatu International offers a world-class Cambridge Curriculum through a flexible hybrid and online homeschooling model from Kindergarten to Year 13.",
   keywords: ["Cambridge Curriculum Kenya", "Homeschooling Kenya", "Online International School", "IGCSE Online", "A Level Online"],
+  alternates: {
+    canonical: '/',
+  },
   manifest: "/manifest.json",
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, // e.g. "your-google-verification-code"
