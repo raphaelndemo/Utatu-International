@@ -138,93 +138,119 @@ export default async function SchoolPage({
 
                         {school.content === "special-needs-detailed" ? (<>
                             <p>
-                                At Utatu International School, we are committed to inclusivity and personalized learning. Our Special Needs Education (SNE) Department, led by our dedicated head, focuses on providing tailored support and resources for students with diverse learning needs. We specialize in assisting students with conditions such as autism, dyslexia, dysgraphia, and dyscalculia.
+                                At Utatu International School, we believe that access to quality education should never be limited by learning differences.
                             </p>
                             <p>
-                                We believe that every child deserves the opportunity to succeed and thrive in their educational journey. Through our online IGCSE curriculum, we ensure that each student receives the individualized attention and accommodations they need to reach their full potential.
+                                Our Special Needs Education (SNE) Department provides structured, personalized academic support within our hybrid and online Cambridge learning model. Led by experienced educators, we collaborate closely with families to design learning pathways that promote confidence, independence, and measurable progress.
+                            </p>
+                            <p>
+                                We support learners with diverse educational needs, including autism spectrum differences, dyslexia, dysgraphia, dyscalculia, and other learning profiles — always within a respectful, strengths-based framework.
+                            </p>
+                            <p>
+                                Through structured planning, individualized support, and flexible delivery, we ensure every learner has the opportunity to grow academically and personally.
                             </p>
 
-                            <h2>About our Special Needs Education</h2>
+                            <h2>About Our Special Needs Education Pathway</h2>
                             <p>
-                                Special Needs Education (SNE) focuses on ensuring that learners with diverse abilities have access to quality and inclusive education. It provides tailored programs designed to meet the unique learning, social, and vocational needs of each individual. Below is a breakdown of the three key levels in special needs education:
+                                Our Special Needs Education pathway is structured into three progressive levels, designed to meet learners where they are and support meaningful growth.
                             </p>
 
                             <ReadMoreCard
                                 title="1: Foundation Level"
-                                preview="The foundation level focuses on developing basic skills and laying a strong groundwork for future learning."
+                                preview="Building Essential Skills for Lifelong Learning — the Foundation Level focuses on developing core communication, cognitive, and motor skills that form the groundwork for future academic and social development."
                             >
                                 <h4>Key Objectives</h4>
                                 <ul>
-                                    <li>Build communication, sensory, and motor skills.</li>
-                                    <li>Foster emotional and social interaction.</li>
-                                    <li>Create an inclusive environment for exploration and discovery.</li>
+                                    <li>Strengthen communication and expressive abilities</li>
+                                    <li>Develop sensory awareness and motor coordination</li>
+                                    <li>Foster social interaction and emotional regulation</li>
+                                    <li>Encourage curiosity and structured exploration</li>
                                 </ul>
-                                <h4>Activities and Programs</h4>
+                                <h4>Learning Focus</h4>
                                 <ul>
-                                    <li><strong>Early Literacy and Numeracy:</strong> Introduce numbers, letters, and shapes through interactive games and visual aids.</li>
-                                    <li><strong>Motor Skills Development:</strong> Activities like drawing, stacking blocks, and gross motor exercises such as running or jumping.</li>
-                                    <li><strong>Sensory Integration:</strong> Use of sensory rooms and activities to improve response to stimuli.</li>
-                                    <li><strong>Social Skills Training:</strong> Group play, storytelling, and peer interactions to encourage collaboration and empathy.</li>
-                                    <li>Activities of daily living skills.</li>
+                                    <li>Early literacy and numeracy through visual and interactive tools</li>
+                                    <li>Fine and gross motor skill development</li>
+                                    <li>Sensory integration activities</li>
+                                    <li>Social skills development through guided group interaction</li>
+                                    <li>Daily living skills (self-care, organization, routines)</li>
                                 </ul>
-                                <h4>Tools and Strategies</h4>
+                                <h4>Support Tools &amp; Strategies</h4>
                                 <ul>
-                                    <li>Visual schedules for daily activities.</li>
-                                    <li>Assistive technologies like communication boards.</li>
-                                    <li>Individualized Education Plans (IEPs) tailored to each learner.</li>
+                                    <li>Individualized Education Plans (IEPs)</li>
+                                    <li>Visual schedules and structured routines</li>
+                                    <li>Assistive communication tools</li>
+                                    <li>Structured observation and progress tracking</li>
                                 </ul>
                             </ReadMoreCard>
 
                             <ReadMoreCard
                                 title="2: Intermediate Level"
-                                preview="The intermediate level builds on foundational skills and emphasizes academic growth, independence, and problem-solving."
+                                preview="Developing Academic Confidence and Independence — the Intermediate Level builds upon foundational skills, introducing structured academic learning alongside real-world application and independent thinking."
                             >
                                 <h4>Key Objectives</h4>
                                 <ul>
-                                    <li>Enhance cognitive, emotional, and social development.</li>
-                                    <li>Introduce functional academics and real-world skills.</li>
-                                    <li>Encourage independent thinking and adaptability.</li>
+                                    <li>Strengthen cognitive and problem-solving skills</li>
+                                    <li>Develop functional literacy and numeracy</li>
+                                    <li>Encourage emotional awareness and adaptability</li>
+                                    <li>Promote increasing independence</li>
                                 </ul>
-                                <h4>Activities and Programs</h4>
+                                <h4>Learning Focus</h4>
                                 <ul>
-                                    <li><strong>Functional Academics:</strong> Reading, writing, and math skills applied to everyday scenarios.</li>
-                                    <li><strong>Life Skills Training:</strong> Personal hygiene, dressing, and simple household chores.</li>
-                                    <li><strong>Social and Emotional Learning (SEL):</strong> Role-playing and group activities to build confidence and self-regulation.</li>
-                                    <li><strong>Creative Expression:</strong> Art, music, and drama programs to stimulate creativity and self-expression.</li>
+                                    <li>Functional academics applied to real-life scenarios</li>
+                                    <li>Life skills development</li>
+                                    <li>Social and Emotional Learning (SEL)</li>
+                                    <li>Creative expression through arts and music</li>
+                                    <li>Structured academic tasks aligned to learner capacity</li>
                                 </ul>
-                                <h4>Tools and Strategies</h4>
+                                <h4>Support Tools &amp; Strategies</h4>
                                 <ul>
-                                    <li>Hands-on learning with manipulatives and task-based activities.</li>
-                                    <li>Use of assistive devices like text-to-speech software for academic support.</li>
-                                    <li>Regular progress assessments to adapt teaching methods.</li>
+                                    <li>Hands-on, task-based instruction</li>
+                                    <li>Assistive technologies (e.g., text-to-speech tools where appropriate)</li>
+                                    <li>Structured progress assessments</li>
+                                    <li>Flexible pacing within curriculum expectations</li>
                                 </ul>
                             </ReadMoreCard>
 
                             <ReadMoreCard
                                 title="3: Pre-Vocational Level"
-                                preview="The pre-vocational level focuses on preparing learners for life beyond school by equipping them with job-specific skills, independence, and decision-making abilities."
+                                preview="Preparing for Independence and Future Pathways — the Pre-Vocational Level focuses on equipping learners with practical skills, decision-making abilities, and increased independence."
                             >
                                 <h4>Key Objectives</h4>
                                 <ul>
-                                    <li>Develop pre-employment skills and work habits.</li>
-                                    <li>Enhance independence in daily living activities.</li>
-                                    <li>Foster community integration and self-reliance.</li>
+                                    <li>Develop pre-employment skills and structured work habits</li>
+                                    <li>Strengthen self-reliance and daily living independence</li>
+                                    <li>Encourage community awareness and integration</li>
+                                    <li>Support career exploration</li>
                                 </ul>
-                                <h4>Activities and Programs</h4>
+                                <h4>Learning Focus</h4>
                                 <ul>
-                                    <li><strong>Workplace Simulations:</strong> Tasks like packaging, assembly, or customer service in a controlled environment.</li>
-                                    <li><strong>Career Exploration:</strong> Visits to workplaces and exposure to different career paths.</li>
-                                    <li><strong>Financial Literacy:</strong> Basics of budgeting, saving, and managing money.</li>
-                                    <li><strong>Teamwork and Communication:</strong> Group projects and practice in workplace etiquette.</li>
-                                    <li><strong>Internships and Volunteer Work:</strong> Opportunities to apply skills in real-world settings.</li>
+                                    <li>Workplace simulations and task-based learning</li>
+                                    <li>Career exposure and structured exploration</li>
+                                    <li>Financial literacy basics</li>
+                                    <li>Teamwork and communication skills</li>
+                                    <li>Guided volunteer or practical experiences (where applicable)</li>
                                 </ul>
-                                <h4>Tools and Strategies</h4>
+                                <h4>Support Tools &amp; Strategies</h4>
                                 <ul>
-                                    <li>Vocational training kits tailored to various skills (e.g., sewing, carpentry, baking).</li>
-                                    <li>Collaboration with local businesses for work experience opportunities.</li>
-                                    <li>Ongoing mentorship and guidance from teachers and counselors.</li>
+                                    <li>Skill-based vocational training materials</li>
+                                    <li>Mentorship and structured supervision</li>
+                                    <li>Community partnerships (where available)</li>
+                                    <li>Ongoing guidance and transition planning</li>
                                 </ul>
                             </ReadMoreCard>
+
+                            <h2>Our Commitment to Inclusive Excellence</h2>
+                            <p>
+                                Utatu International&apos;s Special Needs pathway is guided by the principle that inclusion requires structure, clarity, and partnership.
+                            </p>
+                            <p>We:</p>
+                            <ul>
+                                <li>Maintain high academic expectations where appropriate</li>
+                                <li>Adapt instructional strategies without lowering standards</li>
+                                <li>Work collaboratively with families</li>
+                                <li>Prioritize dignity, respect, and strengths-based development</li>
+                            </ul>
+                            <p>Our approach ensures learners receive structured support within a credible educational framework.</p>
                         </>) : school.content === "foundation-stage-detailed" ? (<>
                             <p>
                                 The UIS Foundation Stage, encompassing Kindergarten 1 (age 3), Kindergarten 2 (age 4), and Kindergarten 3 (age 5), provides a crucial starting point for young learners. Aligned with the Cambridge Early Years framework, this program is designed to create a strong educational foundation for children in these formative years.
@@ -253,108 +279,301 @@ export default async function SchoolPage({
                             </p>
                         </>) : school.content === "preparatory-school-detailed" ? (<>
                             <p>
-                                At UIS we offer the Preparatory School (Cambridge Primary program) which fosters proficiency and comprehension in ten subjects, encompassing:
+                                Utatu International School offers a structured Cambridge Primary programme (Year 1–6) designed to build academic confidence, critical thinking, and independent learning skills.
+                            </p>
+                            <p>
+                                Our hybrid and online Cambridge Primary model combines internationally recognized curriculum standards with flexible delivery — making high-quality Cambridge education accessible to modern families.
+                            </p>
+                            <p>
+                                We provide a clear progression pathway that prepares students for Cambridge Lower Secondary and future IGCSE success.
                             </p>
 
-                            <h2>Core Subjects</h2>
-                            <h3>English</h3>
-                            <p>Develops strong language skills, including reading, writing, speaking, and listening.</p>
-                            <h3>Mathematics</h3>
-                            <p>Builds a solid foundation in number sense, problem-solving, and mathematical reasoning.</p>
-                            <h3>Science</h3>
-                            <p>Introduces scientific inquiry, exploration, and understanding of the natural world.</p>
+                            <h2>Core Cambridge Primary Subjects (Year 1–6)</h2>
+                            <p>Our Preparatory School focuses on foundational mastery in core academic disciplines aligned with the Cambridge framework.</p>
 
-                            <h3>Additional Subjects</h3>
+                            <h3>English</h3>
+                            <p>Develops strong literacy skills including reading comprehension, structured writing, vocabulary development, and confident communication.</p>
+
+                            <h3>Mathematics</h3>
+                            <p>Builds number fluency, logical reasoning, and structured problem-solving through progressive Cambridge-aligned objectives.</p>
+
+                            <h3>Science</h3>
+                            <p>Introduces scientific inquiry, observation, experimentation, and analytical thinking — forming the foundation for future STEM success.</p>
+
+                            <h2>A Broad and Balanced Cambridge Curriculum</h2>
+                            <p>Beyond core subjects, students engage in a comprehensive Cambridge Primary curriculum that promotes creativity, digital literacy, and global awareness:</p>
                             <ul>
                                 <li>Art and Design</li>
                                 <li>Computing</li>
                                 <li>Digital Literacy</li>
-                                <li>Global Perspective</li>
-                                <li>Wellbeing</li>
+                                <li>Global Perspectives</li>
+                                <li>Wellbeing Education</li>
                                 <li>Humanities (Social Studies)</li>
-                                <li>Modern Foreign Language</li>
+                                <li>Modern Foreign Languages</li>
                                 <li>Music</li>
                                 <li>Physical Education</li>
                             </ul>
+                            <p>This well-rounded approach ensures academic development is balanced with social, emotional, and creative growth.</p>
 
-                            <p>The program also features assessments that validate and enhance learning. It provides a comprehensive curriculum designed to foster academic excellence and holistic development in young learners.</p>
+                            <h2>Structured Assessment &amp; Academic Progress Monitoring</h2>
+                            <p>As part of the Cambridge Primary programme, students participate in structured assessments that:</p>
+                            <ul>
+                                <li>Measure progress against international benchmarks</li>
+                                <li>Identify learning strengths and support areas</li>
+                                <li>Inform instructional planning</li>
+                                <li>Prepare students for seamless progression to Cambridge Lower Secondary</li>
+                            </ul>
+                            <p>Assessment at Utatu International School supports clarity, accountability, and continuous academic improvement.</p>
 
-                            <h2>A Broad Curriculum</h2>
-                            <p>With a focus on ten core subjects, including English and Mathematics as foundational pillars, the program ensures a well-rounded education. Students are introduced to a variety of disciplines, stimulating curiosity and critical thinking.</p>
+                            <h2>Why Choose Our Cambridge Primary Programme?</h2>
+                            <p>Parents choose Utatu International for Year 1–6 because we provide:</p>
+                            <ul>
+                                <li>Accredited Cambridge curriculum delivery</li>
+                                <li>Flexible hybrid and online learning options</li>
+                                <li>Structured academic planning</li>
+                                <li>Individualized pacing within Cambridge standards</li>
+                                <li>Clear progression to IGCSE pathways</li>
+                            </ul>
+                            <p>Our Preparatory School builds the academic discipline and confidence necessary for long-term success within the Cambridge system.</p>
 
-                            <h2>Rigorous Assessment</h2>
-                            <p>To measure progress and identify areas for improvement, the Preparatory School incorporates regular assessments. These evaluations serve as valuable tools for both students and teachers, informing instructional decisions and celebrating achievements.</p>
-
-                            <p>By combining a diverse curriculum with robust assessment, the UIS Preparatory School equips students with the knowledge and skills necessary for future academic success.</p>
+                            <h2>Preparing Students for Cambridge Lower Secondary</h2>
+                            <p>The transition from Year 6 to Lower Secondary is carefully structured. Students complete Primary with:</p>
+                            <ul>
+                                <li>Strong literacy and numeracy foundations</li>
+                                <li>Developed critical thinking skills</li>
+                                <li>Digital fluency</li>
+                                <li>Academic independence</li>
+                            </ul>
+                            <p>This ensures readiness for the next stage of Cambridge education.</p>
                         </>) : school.content === "junior-high-school-detailed" ? (<>
                             <p>
-                                The UIS Junior High program, following the Cambridge Lower Secondary framework, offers a robust curriculum designed to foster holistic development in young learners.
+                                At Utatu International School, our Junior High School (Year 7–9) follows the internationally recognized Cambridge Lower Secondary framework, providing a structured pathway that bridges Primary education and IGCSE preparation.
+                            </p>
+                            <p>
+                                Through our hybrid and online learning model, students benefit from academic rigor, guided independence, and personalized support — ensuring steady progression within the Cambridge system.
                             </p>
 
                             <h2>Core Academic Foundation</h2>
-                            <p>The program lays a strong academic foundation with core subjects such as:</p>
+                            <p>Our Cambridge Lower Secondary programme builds depth, analytical thinking, and subject mastery in essential academic disciplines:</p>
+
                             <h3>English</h3>
-                            <p>Catering to both first and second language learners, the program ensures effective communication skills.</p>
+                            <p>Supports both first and second language learners in developing advanced reading comprehension, structured writing, analytical skills, and confident communication.</p>
+
                             <h3>Mathematics</h3>
-                            <p>Building a solid numerical and problem-solving ability.</p>
-                            <h3>Science (Biology, Chemistry and Physics)</h3>
-                            <p>Fostering scientific inquiry and understanding of the natural world.</p>
+                            <p>Strengthens algebraic thinking, problem-solving strategies, logical reasoning, and quantitative fluency.</p>
 
-                            <h2>Exploring Creative and Physical Abilities</h2>
-                            <p>Beyond the core subjects, UIS Junior High recognizes the importance of a well-rounded education by incorporating:</p>
+                            <h3>Science (Biology, Chemistry &amp; Physics)</h3>
+                            <p>Introduces structured scientific inquiry, experimentation, and deeper conceptual understanding across core scientific disciplines.</p>
+
+                            <p>These subjects form the academic backbone required for successful IGCSE transition.</p>
+
+                            <h2>Expanding Intellectual &amp; Creative Development</h2>
+                            <p>Beyond core academics, our Junior High programme offers a broad and balanced curriculum that supports creativity, digital competence, and global awareness:</p>
+
                             <h3>Art &amp; Design</h3>
-                            <p>Nurturing creativity and artistic expression.</p>
-                            <h3>Digital Literacy</h3>
-                            <p>Expanding digital skills beyond basic ICT to include digital citizenship and media literacy.</p>
-                            <h3>ICT</h3>
-                            <p>Introducing students to the digital world and basic computer skills.</p>
-                            <h3>Global Perspectives</h3>
-                            <p>Encouraging critical thinking and global citizenship.</p>
-                            <h3>Geography</h3>
-                            <p>Explores the physical features of the Earth, as well as how human activities interact with the environment. It covers topics such as climate, landforms, ecosystems, and urbanization, helping students understand the world around them.</p>
-                            <h3>History</h3>
-                            <p>Delves into past events, societies, and cultures, providing insights into how historical developments shape the present. It encourages critical thinking about sources, timelines, and the impact of key moments in history.</p>
-                            <h3>Modern Foreign Languages</h3>
-                            <p>We offer modern foreign languages to promote diversity among our students. By learning languages such as Spanish, French, German among others, students gain valuable cultural insights and communication skills.</p>
-                            <h3>Music</h3>
-                            <p>We offer music as part of our well-rounded education, fostering creativity and musical skills in our students.</p>
-                            <h3>Wellbeing</h3>
-                            <p>This helps students navigate key developmental changes by fostering motivation, resilience, and engagement. The curriculum encourages self-reflection, positive relationships, and active participation in a dynamic world, promoting overall wellbeing.</p>
-                            <h3>Physical Education</h3>
-                            <p>Promoting a healthy lifestyle, teamwork, and physical fitness.</p>
+                            <p>Encourages visual expression, creativity, and innovative thinking.</p>
 
-                            <p>This balanced approach ensures that our Junior High students not only excel academically but also develop a wide range of skills, interests, and talents.</p>
+                            <h3>Digital Literacy &amp; ICT</h3>
+                            <p>Develops digital fluency, media literacy, responsible technology use, and foundational computing skills.</p>
+
+                            <h3>Global Perspectives</h3>
+                            <p>Cultivates critical thinking, research skills, and global citizenship awareness.</p>
+
+                            <h3>Geography</h3>
+                            <p>Explores environmental systems, human interaction with the Earth, climate patterns, urbanization, and sustainability.</p>
+
+                            <h3>History</h3>
+                            <p>Examines historical events, cultures, and developments while strengthening analytical thinking and source evaluation.</p>
+
+                            <h3>Modern Foreign Languages</h3>
+                            <p>Offers languages such as Spanish, French, and German to enhance communication skills and cultural understanding.</p>
+
+                            <h3>Music</h3>
+                            <p>Builds creative confidence and artistic discipline.</p>
+
+                            <h3>Wellbeing</h3>
+                            <p>Supports personal growth, resilience, emotional intelligence, and positive peer engagement during key developmental years.</p>
+
+                            <h3>Physical Education</h3>
+                            <p>Promotes teamwork, discipline, and lifelong health awareness.</p>
+
+                            <h2>Preparing for IGCSE Success</h2>
+                            <p>Year 7–9 at Utatu International is not just academic enrichment — it is structured preparation. Students complete Cambridge Lower Secondary with:</p>
+                            <ul>
+                                <li>Strong analytical and research skills</li>
+                                <li>Developed subject depth</li>
+                                <li>Academic independence</li>
+                                <li>Confidence for IGCSE-level expectations</li>
+                            </ul>
+                            <p>Our hybrid and online Cambridge model ensures flexibility without sacrificing progression standards.</p>
+
+                            <h2>Why Choose UIS Junior High?</h2>
+                            <p>Parents choose Utatu International for Cambridge Lower Secondary because we provide:</p>
+                            <ul>
+                                <li>A globally recognized Cambridge framework</li>
+                                <li>Flexible hybrid and online delivery</li>
+                                <li>Structured assessment aligned with international benchmarks</li>
+                                <li>Personalized academic support</li>
+                                <li>Clear progression to IGCSE pathways</li>
+                            </ul>
+                            <p>This balanced and rigorous approach ensures students excel academically while developing diverse talents and life skills.</p>
                         </>) : school.content === "senior-high-school-detailed" ? (<>
                             <p>
-                                Our Senior High program, following the Cambridge Upper Secondary curriculum, is meticulously designed to prepare students aged 14 to 16 for the rigors of the International General Certificate of Secondary Education (IGCSE) examinations. This globally recognized qualification, with a rich history spanning over three decades, is the cornerstone for entry into prestigious universities and competitive employment opportunities worldwide.
+                                At Utatu International School, our Senior High School (Year 10–11) follows the internationally recognized Cambridge Upper Secondary curriculum, preparing students for the globally respected Cambridge IGCSE and O Level qualifications.
+                            </p>
+                            <p>
+                                Through our structured hybrid and online learning model, students receive focused academic preparation, guided subject specialization, and consistent assessment support — ensuring readiness for higher education and competitive global pathways.
                             </p>
 
-                            <h2>Unparalleled Subject Breadth</h2>
-                            <p>The IGCSE offers an unparalleled breadth of subjects, encompassing over 70 disciplines including 30 languages. This extensive curriculum empowers schools to create tailored learning pathways that align with individual student interests and aspirations.</p>
+                            <h2>Cambridge IGCSE: Internationally Recognized Excellence</h2>
+                            <p>
+                                The Cambridge International General Certificate of Secondary Education (IGCSE) is one of the world&apos;s most respected secondary qualifications. Recognized by universities, colleges, and employers worldwide, it provides a rigorous academic benchmark for students aged 14–16.
+                            </p>
+                            <p>At UIS, our IGCSE programme is designed to:</p>
+                            <ul>
+                                <li>Develop subject mastery and analytical depth</li>
+                                <li>Strengthen independent learning and time management</li>
+                                <li>Build research and examination skills</li>
+                                <li>Prepare students for A Level, IB, or other advanced pathways</li>
+                            </ul>
+                            <p>This stage marks a transition from guided learning to academic independence.</p>
 
-                            <h2>O Level Qualification</h2>
-                            <p>At this crucial stage of education, students can also opt for the O Level qualification, another internationally respected benchmark. Both the IGCSE and O Levels equip young learners with the essential tools to excel in their future endeavors.</p>
+                            <h2>Broad and Flexible Subject Choices</h2>
+                            <p>
+                                The Cambridge IGCSE framework offers over 70 subjects, including more than 30 languages, allowing students to create personalized academic pathways aligned with their strengths and future ambitions.
+                            </p>
+                            <p>Subject areas typically include:</p>
+                            <ul>
+                                <li>English (First &amp; Second Language)</li>
+                                <li>Mathematics (Core &amp; Extended)</li>
+                                <li>Sciences (Biology, Chemistry, Physics)</li>
+                                <li>Humanities (Geography, History, Global Perspectives)</li>
+                                <li>Business and Economics</li>
+                                <li>ICT and Computer Science</li>
+                                <li>Modern Foreign Languages</li>
+                                <li>Creative and Performing Arts</li>
+                            </ul>
+                            <p>Our academic team guides families in selecting subject combinations that support university entry requirements and long-term career goals.</p>
+
+                            <h2>O Level Qualification Option</h2>
+                            <p>Students may also pursue the Cambridge O Level qualification, another internationally respected academic benchmark.</p>
+                            <p>Both IGCSE and O Level pathways:</p>
+                            <ul>
+                                <li>Uphold rigorous Cambridge standards</li>
+                                <li>Develop critical thinking and structured analysis</li>
+                                <li>Strengthen written and applied knowledge</li>
+                                <li>Provide internationally portable qualifications</li>
+                            </ul>
+
+                            <h2>Structured Preparation &amp; Academic Support</h2>
+                            <p>Our Senior High School programme provides:</p>
+                            <ul>
+                                <li>Clear syllabus mapping and milestone tracking</li>
+                                <li>Regular formative and summative assessments</li>
+                                <li>Exam-focused preparation strategies</li>
+                                <li>Guided academic mentoring</li>
+                                <li>Hybrid and online flexibility without academic compromise</li>
+                            </ul>
+                            <p>We combine structured progression with personalized support — ensuring students are prepared not only to pass examinations, but to excel.</p>
+
+                            <h2>Preparing for the Next Stage</h2>
+                            <p>Completion of Year 11 at Utatu International positions students for:</p>
+                            <ul>
+                                <li>Cambridge A Level studies</li>
+                                <li>International university pathways</li>
+                                <li>Competitive global admissions</li>
+                                <li>Professional career foundations</li>
+                            </ul>
+                            <p>This stage builds intellectual discipline, academic confidence, and future readiness.</p>
+
+                            <h2>Why Choose UIS for Cambridge Upper Secondary?</h2>
+                            <p>Parents choose Utatu International Senior High because we provide:</p>
+                            <ul>
+                                <li>Accredited Cambridge IGCSE and O Level pathways</li>
+                                <li>Flexible hybrid and online delivery</li>
+                                <li>Structured exam preparation</li>
+                                <li>Personalized subject guidance</li>
+                                <li>Internationally recognized academic standards</li>
+                            </ul>
+                            <p>Year 10–11 is more than exam preparation — it is preparation for global opportunity.</p>
                         </>) : school.content === "international-advanced-school-detailed" ? (<>
                             <p>
-                                Building upon the strong foundation provided by the IGCSE or O Level, our International Advanced Level (A Level) program is meticulously crafted to prepare students for the rigors of higher education. This two-year intensive course offers a deep dive into three or four subjects across the sciences, arts, and humanities, fostering specialized knowledge and critical thinking abilities.
+                                At Utatu International School, our International Advanced School (Year 12–13) delivers the globally respected Cambridge International AS &amp; A Level programme — a rigorous two-year academic pathway designed to prepare students for competitive university admission worldwide.
+                            </p>
+                            <p>
+                                Building upon the foundation of IGCSE or O Level, our A Level programme develops subject mastery, advanced analytical thinking, and independent academic discipline.
+                            </p>
+                            <p>
+                                Through our structured hybrid and online model, students benefit from focused specialization with guided academic mentorship — ensuring readiness for higher education at leading universities.
                             </p>
 
-                            <h2>Modular Curriculum Structure</h2>
-                            <p>The A Level curriculum is thoughtfully structured into two stages: AS and A2. This modular approach empowers students to tailor their learning journey based on their academic goals and aspirations.</p>
-                            <p>Whether they opt to complete all examinations at the end of the two-year program, or choose to take the AS as a standalone qualification, students have the flexibility to chart their own educational path.</p>
+                            <h2>Cambridge AS &amp; A Level: Globally Recognized Academic Excellence</h2>
+                            <p>
+                                The Cambridge A Level qualification is internationally recognized by top universities across the UK, Europe, North America, Asia, and beyond.
+                            </p>
+                            <p>It is valued for:</p>
+                            <ul>
+                                <li>Academic depth and subject specialization</li>
+                                <li>Rigorous assessment standards</li>
+                                <li>Preparation for university-style learning</li>
+                                <li>Development of independent research and critical analysis skills</li>
+                            </ul>
+                            <p>A Level is not simply an examination pathway — it is preparation for academic leadership.</p>
+
+                            <h2>Deep Specialization Across Key Disciplines</h2>
+                            <p>
+                                Students select three to four subjects to study in depth, allowing them to align academic focus with intended university courses and career ambitions.
+                            </p>
+                            <p>Subject areas typically include:</p>
+                            <ul>
+                                <li>Mathematics and Further Mathematics</li>
+                                <li>Biology, Chemistry, Physics</li>
+                                <li>Economics and Business</li>
+                                <li>Computer Science</li>
+                                <li>English Literature</li>
+                                <li>History and Humanities</li>
+                                <li>Modern Foreign Languages</li>
+                            </ul>
+                            <p>Our academic advisors guide subject selection to ensure alignment with university entry requirements.</p>
+
+                            <h2>Modular Curriculum Structure (AS &amp; A2)</h2>
+                            <p>The Cambridge A Level programme is structured into two stages:</p>
+                            <h3>AS Level (Year 12)</h3>
+                            <p>Students may complete the AS Level as a standalone qualification or progress into A2.</p>
+                            <h3>A2 Level (Year 13)</h3>
+                            <p>Completing A2 leads to the full Cambridge A Level qualification.</p>
+                            <p>This modular approach offers flexibility while maintaining academic rigor and progression clarity.</p>
 
                             <h2>Program Highlights</h2>
-                            <h3>Deep Specialization</h3>
-                            <p>Students choose 3–4 subjects to study in depth, allowing for focused expertise in their areas of interest.</p>
+                            <h3>Advanced Academic Depth</h3>
+                            <p>Focused subject mastery prepares students for demanding university coursework.</p>
                             <h3>Flexible Pathways</h3>
-                            <p>Choose between AS as a standalone qualification or complete the full A Level over two years.</p>
-                            <h3>Broad Subject Range</h3>
-                            <p>Subjects span sciences, arts, and humanities, providing diverse learning opportunities.</p>
-                            <h3>Critical Thinking Focus</h3>
-                            <p>Develops advanced analytical and independent learning skills essential for university success.</p>
+                            <p>Complete AS independently or pursue the full two-year A Level.</p>
+                            <h3>Critical Thinking &amp; Independence</h3>
+                            <p>Develops research skills, structured argumentation, and analytical reasoning.</p>
+                            <h3>Hybrid &amp; Online Flexibility</h3>
+                            <p>Structured learning delivered with flexibility — without compromising standards.</p>
 
-                            <h2>Global Recognition and Excellence</h2>
-                            <p>Renowned globally for its academic excellence, the A Level is the passport to top universities worldwide. Its comprehensive curriculum and rigorous assessment methodology equip students with the intellectual tools and independent learning skills essential for success in higher education and beyond.</p>
+                            <h2>Preparing for Competitive University Admission</h2>
+                            <p>Our International Advanced School prepares students for:</p>
+                            <ul>
+                                <li>Admission to top global universities</li>
+                                <li>Competitive scholarship applications</li>
+                                <li>Professional career pathways</li>
+                                <li>Academic independence at tertiary level</li>
+                            </ul>
+                            <p>Graduates leave Year 13 with not only qualifications — but intellectual maturity and clarity of direction.</p>
+
+                            <h2>Why Choose UIS for Cambridge A Level?</h2>
+                            <p>Parents and students choose Utatu International for A Levels because we provide:</p>
+                            <ul>
+                                <li>Accredited Cambridge AS &amp; A Level delivery</li>
+                                <li>Structured academic mentorship</li>
+                                <li>Clear university pathway guidance</li>
+                                <li>Flexible hybrid and online access</li>
+                                <li>Internationally competitive academic standards</li>
+                            </ul>
+                            <p>Year 12–13 is where academic ambition becomes defined direction.</p>
                         </>) : (
                             <p>{school.content}</p>
                         )}

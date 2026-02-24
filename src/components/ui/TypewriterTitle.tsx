@@ -7,7 +7,7 @@ export function TypewriterTitle() {
         <span className="inline-block text-secondary min-h-[1.5em]">
             <Typewriter
                 options={{
-                    strings: ["Education Redefined", "Ignite Your Potential", ""],
+                    strings: ["Education Redefined", "Flexible Hybrid Learning Program","Ignite Your Potential"],
                     autoStart: true,
                     loop: true,
                     delay: 75,

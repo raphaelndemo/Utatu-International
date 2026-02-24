@@ -97,7 +97,7 @@ export default async function Home() {
             <TypewriterTitle />
           </h1>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto text-primary-foreground/90 px-4">
-            Qualified Teaching Staff providing a world-class Cambridge education.
+            Empower your child with a world-class Cambridge Curriculum. Personalized pacing, expert teachers, meaningful outcomes.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto" asChild>
@@ -117,8 +117,8 @@ export default async function Home() {
             <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase mb-2">
               Educational Excellence
             </h2>
-            <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
-              Get the best Cambridge curriculum
+            <h3 className="text-3xl md:text-4xl font-bold font-heading text-primary">
+              Get the Best Cambridge Curriculum
             </h3>
             <div className="space-y-4 text-muted-foreground text-md leading-relaxed mt-6">
               <p>
@@ -132,7 +132,7 @@ export default async function Home() {
                 Born from a commitment to quality, holistic, and affordable
                 education, Utatu is rooted in the Swahili concept of Trinity,
                 symbolizing the foundation of our vision, mission, core values,
-                motto, and philosophy. Our dedication lies in empowering students
+                motto and philosophy. Our dedication lies in empowering students
                 to become positive change-makers, shaping a brighter future, one
                 student at a time.
               </p>

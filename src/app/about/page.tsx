@@ -23,7 +23,14 @@ export default function AboutPage() {
                             </h3>
                             <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
                                 <p>
-                                    Utatu International School is more than just an institution; it’s a cornerstone for shaping the leaders of tomorrow. The school is based in Nairobi, Kenya. Rooted in the Swahili word for Trinity, our school embodies a holistic approach to education that nurtures the mind, body, and spirit. With a steadfast commitment to providing quality, affordable education, Utatu is dedicated to transforming lives and uplifting communities.
+                                    Utatu International is a future-focused Cambridge homeschooling institution designed for families who value both academic excellence and flexibility. <br />
+
+                                    We provide structured, high-quality hybrid and online Cambridge education from Kindergarten to Year 13, combining internationally recognized academic standards with personalized learning pathways. <br />
+
+                                    We were founded on a simple conviction: children learn best when education adapts to them, not the other way around. Through expert educators, intentional academic planning, and close collaboration with parents, we create learning environments where students grow intellectually, emotionally, and confidently. <br />
+
+                                    Utatu is not just an online school.
+                                    It is a guided, supported Cambridge learning journey built for modern families.
                                 </p>
                             </div>
                             <div className="pt-4">
@@ -58,12 +65,31 @@ export default function AboutPage() {
                 </div>
             </section>
 
+            {/*Differential statement*/}
+            <section className="py-20">
+                <div className="container px-4 mx-auto">
+                    <div className="max-w-3xl mx-auto text-center space-y-4">
+                        <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
+                            What makes us different?
+                        </h3>
+                        <p className="text-muted-foreground text-lg leading-relaxed">
+                            Utatu International combines structured Cambridge academic delivery with flexible hybrid access and individualized educator support. We bridge the gap between independence and institutional excellence.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Who We Are Section */}
-            <section className="py-24 relative overflow-hidden">
-
-
-
+            <section className="py-20 bg-muted/30 relative overflow-hidden">
                 <div className="container relative z-10 px-4 mx-auto">
+                    <div className="max-w-3xl mx-auto text-center mb-16 space-y-4">
+                        <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase">
+                            Our Foundation
+                        </h2>
+                        <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
+                            Mission, Vision &amp; Values
+                        </h3>
+                    </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 max-w-7xl mx-auto">
                         {/* Mission */}
@@ -130,8 +156,7 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Team Section */}
-            <TeamSection />
+
 
             {/* Why Choose Us Section - Dark Template Style */}
             <section id="why-choose-us" className="bg-primary py-24 relative overflow-hidden text-primary-foreground">
@@ -199,7 +224,7 @@ export default function AboutPage() {
                                         <GraduationCap className="w-6 h-6" />
                                     </div>
                                     <h3 className="text-xl font-bold font-heading">Cambridge IGCSE Online Curriculum</h3>
-                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                    <p className="text-primary-foreground/70 text-md leading-relaxed">
                                         Internationally recognized Cambridge IGCSE education delivered through a structured, high-quality online homeschooling program.
                                     </p>
                                 </div>
@@ -210,7 +235,7 @@ export default function AboutPage() {
                                         <UserCog className="w-6 h-6" />
                                     </div>
                                     <h3 className="text-xl font-bold font-heading">Personalized & Flexible Learning</h3>
-                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                    <p className="text-primary-foreground/70 text-md leading-relaxed">
                                         Individualized attention, flexible schedules, and self-paced learning designed to fit each student’s ability, lifestyle, and goals.
                                     </p>
                                 </div>
@@ -221,7 +246,7 @@ export default function AboutPage() {
                                         <Wallet className="w-6 h-6" />
                                     </div>
                                     <h3 className="text-xl font-bold font-heading">Affordable, Cost-Effective Homeschooling</h3>
-                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                    <p className="text-primary-foreground/70 text-md leading-relaxed">
                                         Premium international education without extra costs like transport, uniforms, or boarding—quality education made accessible.
                                     </p>
                                 </div>
@@ -232,7 +257,7 @@ export default function AboutPage() {
                                         <Globe className="w-6 h-6" />
                                     </div>
                                     <h3 className="text-xl font-bold font-heading">Inclusive & Globally Accessible Education</h3>
-                                    <p className="text-primary-foreground/70 text-sm leading-relaxed">
+                                    <p className="text-primary-foreground/70 text-md leading-relaxed">
                                         Learn from anywhere in the world with full academic support, including for students with special learning needs.
                                     </p>
                                 </div>
@@ -241,6 +266,9 @@ export default function AboutPage() {
                     </div>
                 </div>
             </section>
+
+            {/* Team Section */}
+            <TeamSection />
 
             {/* Google Reviews Section */}
             <GoogleReviews />
