@@ -6,39 +6,39 @@ import { cn } from "@/lib/utils";
 const galleryItems = [
     {
         id: 1,
+        title: "Family & Community Day",
+        category: "Community",
+        image: "/images/gallery/utatu-international-school-family-community-day.jpg",
+    },
+    {
+        id: 2,
+        title: "Nature Walk",
+        category: "Outdoor",
+        image: "/images/gallery/utatu-international-school-nature-walk-outdoor-education.jpg",
+    },
+    {
+        id: 3,
+        title: "Outdoor Learning",
+        category: "Academics",
+        image: "/images/gallery/utatu-international-school-outdoor-learning-students.jpg",
+    },
+    {
+        id: 4,
+        title: "Student Life",
+        category: "Campus",
+        image: "/images/gallery/utatu-international-school-outdoor-learning-student-smiling.jpg",
+    },
+    {
+        id: 5,
         title: "Adventure & Camping",
         category: "Outdoor",
         image: "/images/Camping.webp",
     },
     {
-        id: 2,
+        id: 6,
         title: "Strategic Thinking",
         category: "Club",
         image: "/images/Chess.webp",
-    },
-    {
-        id: 3,
-        title: "Scouts Movement",
-        category: "Leadership",
-        image: "/images/Scouts.webp",
-    },
-    {
-        id: 4,
-        title: "E-Sports & Gaming",
-        category: "Innovation",
-        image: "/images/gaming.webp",
-    },
-    {
-        id: 5,
-        title: "Music & Arts",
-        category: "Creativity",
-        image: "/images/music.webp",
-    },
-    {
-        id: 6,
-        title: "Spiritual Growth",
-        category: "Values",
-        image: "/images/Bible.webp",
     },
 ];
 

@@ -122,7 +122,7 @@ export default async function Home() {
             <h3 className="text-3xl md:text-4xl font-bold font-heading text-primary">
               Get the Best Cambridge Curriculum
             </h3>
-            <div className="space-y-4 text-muted-foreground text-md leading-relaxed mt-6">
+            <div className="space-y-4 text-muted-foreground text-lg leading-relaxed mt-6">
               <p>
                 <span className="font-semibold text-primary">Utatu</span> is one of the best homeschooling international schools in
                 Kenya offering a world-class Cambridge Curriculum. We offer
@@ -160,9 +160,6 @@ export default async function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 px-4">
             <div className="space-y-2 text-left">
-              <h2 className="text-sm font-semibold tracking-[0.2em] text-muted-foreground uppercase">
-                Life at Utatu
-              </h2>
               <h3 className="text-3xl md:text-4xl font-light font-heading text-primary">
                 — OUR SCHOOLS
               </h3>
@@ -190,7 +187,7 @@ export default async function Home() {
                       <h3 className="text-xl font-medium font-heading tracking-wide text-primary-foreground mb-3">
                         {school.title}
                       </h3>
-                      <p className="text-primary-foreground/90 mb-2 line-clamp-3 text-sm leading-relaxed">
+                      <p className="text-primary-foreground/90 mb-2 line-clamp-3 text-md leading-relaxed">
                         {school.description}
                       </p>
                     </div>

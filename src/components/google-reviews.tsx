@@ -115,7 +115,7 @@ export function GoogleReviews() {
                 </div>
 
                 <div className="text-center pt-8 border-t">
-                    <p className="font-medium text-foreground">
+                    <p className="text-lg font-medium text-foreground">
                         Google rating score: <span className="font-bold">5.0</span> of 5, based on <span className="font-bold">46 reviews</span>
                     </p>
                 </div>

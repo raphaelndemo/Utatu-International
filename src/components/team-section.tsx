@@ -40,7 +40,7 @@ export function TeamSection() {
                     <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary">
                         Meet our team
                     </h2>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="text-muted-foreground leading-relaxed text-lg">
                         Meet our exceptional team at Utatu International! Comprising diverse talents and expertise, we are a dedicated group committed to delivering excellence in every aspect of education.
                     </p>
                 </div>

@@ -1,10 +1,65 @@
+"use client";
+
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MapPin, Phone, Mail, Loader2, CheckCircle2, AlertCircle } from "lucide-react";
 
 export default function ContactPage() {
+    const [formData, setFormData] = useState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        subject: "",
+        message: "",
+    });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
+    const [errorMessage, setErrorMessage] = useState("");
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setIsSubmitting(true);
+        setStatus("idle");
+        setErrorMessage("");
+
+        try {
+            const response = await fetch("/api/contact", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(formData),
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setStatus("success");
+                setFormData({
+                    firstName: "",
+                    lastName: "",
+                    email: "",
+                    subject: "",
+                    message: "",
+                });
+            } else {
+                setStatus("error");
+                setErrorMessage(data.error || "Something went wrong. Please try again.");
+            }
+        } catch (error) {
+            setStatus("error");
+            setErrorMessage("An unexpected error occurred. Please try again later.");
+        } finally {
+            setIsSubmitting(false);
+        }
+    };
     return (
         <div className="container py-20">
             <div className="max-w-5xl mx-auto">
@@ -61,31 +116,58 @@ export default function ContactPage() {
                                 Fill out the form below and we&apos;ll get back to you as soon as possible.
                             </p>
                         </div>
-                        <form className="space-y-4">
+                        <form className="space-y-4" onSubmit={handleSubmit}>
+                            {status === "success" && (
+                                <div className="p-4 bg-green-50 text-green-700 rounded-md flex items-start gap-3 border border-green-200">
+                                    <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5" />
+                                    <div>
+                                        <h4 className="font-medium">Message sent successfully!</h4>
+                                        <p className="text-sm">Thank you for reaching out. We will get back to you shortly.</p>
+                                    </div>
+                                </div>
+                            )}
+
+                            {status === "error" && (
+                                <div className="p-4 bg-red-50 text-red-700 rounded-md flex items-start gap-3 border border-red-200">
+                                    <AlertCircle className="h-5 w-5 shrink-0 mt-0.5" />
+                                    <div>
+                                        <h4 className="font-medium">Error sending message</h4>
+                                        <p className="text-sm">{errorMessage}</p>
+                                    </div>
+                                </div>
+                            )}
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <label htmlFor="first-name" className="text-sm font-medium">First Name</label>
-                                    <Input id="first-name" placeholder="John" />
+                                    <label htmlFor="firstName" className="text-sm font-medium">First Name</label>
+                                    <Input id="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} required disabled={isSubmitting} />
                                 </div>
                                 <div className="space-y-2">
-                                    <label htmlFor="last-name" className="text-sm font-medium">Last Name</label>
-                                    <Input id="last-name" placeholder="Doe" />
+                                    <label htmlFor="lastName" className="text-sm font-medium">Last Name</label>
+                                    <Input id="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} required disabled={isSubmitting} />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                <Input id="email" type="email" placeholder="john@example.com" />
+                                <Input id="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} required disabled={isSubmitting} />
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="subject" className="text-sm font-medium">Subject</label>
-                                <Input id="subject" placeholder="Admissions Inquiry" />
+                                <Input id="subject" placeholder="Admissions Inquiry" value={formData.subject} onChange={handleChange} required disabled={isSubmitting} />
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="message" className="text-sm font-medium">Message</label>
-                                <Textarea id="message" placeholder="How can we help you?" className="min-h-[150px]" />
+                                <Textarea id="message" placeholder="How can we help you?" className="min-h-[150px]" value={formData.message} onChange={handleChange} required disabled={isSubmitting} />
                             </div>
-                            <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
-                                Send Message
+                            <Button type="submit" className="w-full bg-primary text-primary-foreground hover:bg-primary/90" disabled={isSubmitting}>
+                                {isSubmitting ? (
+                                    <>
+                                        <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                                        Sending...
+                                    </>
+                                ) : (
+                                    "Send Message"
+                                )}
                             </Button>
                         </form>
                     </div>
