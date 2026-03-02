@@ -17,31 +17,31 @@ export default async function Home() {
 
     {
       title: "Foundation Stage - (Kindergarten 1-3)",
-      description: "Kindergarten 1-3. A playful start to learning.",
+      description: "Nurturing curiosity and robust development for Early Years with a play-based Cambridge International Curriculum.",
       href: "/schools/foundation-stage",
       image: "/images/kindergarten.webp",
     },
     {
       title: "Preparatory School - (Year 1-6)",
-      description: "Year 1-6. Building core skills and confidence.",
+      description: "Building core skills in literacy, numeracy, and science through our globally-recognized Cambridge Primary program.",
       href: "/schools/preparatory-school",
       image: "/images/preparatory.webp",
     },
     {
       title: "Junior High School - (Year 7-9)",
-      description: "Year 7-9. Fostering independence and inquiry.",
+      description: "Fostering independence and critical thinking to prepare students effectively for the Cambridge Checkpoint exams.",
       href: "/schools/junior-high-school",
       image: "/images/online-homeschooling.webp",
     },
     {
       title: "Senior High School - (Year 10-11)",
-      description: "Year 10-11. Academic excellence and leadership.",
+      description: "Providing academic excellence and rigorous university preparation through the Cambridge IGCSE qualifications.",
       href: "/schools/senior-high-school",
       image: "/images/senior-high.webp",
     },
     {
       title: "Special Needs Education",
-      description: "Inclusive education tailored to individual needs.",
+      description: "Delivering inclusive, specialized hybrid learning plans tailored to support every child's individual educational journey.",
       href: "/schools/special-needs-education",
       image: "/images/special-needs.webp",
     },

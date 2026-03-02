@@ -9,42 +9,49 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/com
 const schoolsData: Record<string, {
     title: string;
     description: string;
+    hero_description: string;
     content: string;
     image: string;
 }> = {
     "special-needs-education": {
         title: "Special Needs Education",
         description: "Equality and inclusivity in learning",
+        hero_description: "Delivering inclusive, specialized hybrid learning plans tailored to support every child's individual educational journey.",
         content: "special-needs-detailed",
         image: "/images/special-needs.webp",
     },
     "foundation-stage": {
         title: "Foundation Stage",
         description: "Ages 3-5: Building Strong Foundations",
+        hero_description: "Nurturing curiosity and robust development for Early Years with a play-based Cambridge International Curriculum.",
         content: "foundation-stage-detailed",
         image: "/images/foundation.webp",
     },
     "preparatory-school": {
         title: "Preparatory School",
         description: "Year 1-6: A strong academic foundation",
+        hero_description: "Building core skills in literacy, numeracy, and science through our globally-recognized Cambridge Primary program.",
         content: "preparatory-school-detailed",
         image: "/images/preparatory.webp",
     },
     "junior-high-school": {
         title: "Junior High School",
         description: "Year 7-9: A Well-Rounded Curriculum",
+        hero_description: "Fostering independence and critical thinking to prepare students effectively for the Cambridge Checkpoint exams.",
         content: "junior-high-school-detailed",
         image: "/images/online-homeschooling.webp",
     },
     "senior-high-school": {
         title: "Senior High School",
         description: "Year 10-11: A Foundation for Global Success",
+        hero_description: "Providing academic excellence and rigorous university preparation through the Cambridge IGCSE qualifications.",
         content: "senior-high-school-detailed",
         image: "/images/senior.webp",
     },
     "international-advanced-school": {
         title: "International Advanced School",
         description: "Year 12-13: Your launchpad to University",
+        hero_description: "Delivering globally-recognized Cambridge AS & A Levels with specialized pathways for top-tier university admission.",
         content: "international-advanced-school-detailed",
         image: "/images/international.webp",
     },
@@ -92,7 +99,7 @@ export default async function SchoolPage({
 
                             {/* Description */}
                             <p className="mt-6 text-lg text-slate-600 leading-relaxed">
-                                At Utatu International School, we are committed to inclusivity and personalized learning for students with diverse needs.
+                                {school.hero_description}
                             </p>
 
                             {/* CTA */}
