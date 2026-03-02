@@ -10,6 +10,7 @@ import { postsQuery, eventsQuery } from "@/lib/sanity/queries";
 import { SanityPost, SanityEvent } from "@/lib/sanity/types";
 import { urlFor } from "@/lib/sanity/image";
 import { GallerySection } from "@/components/gallery-section";
+import { FaqSection } from "@/components/faq-section";
 
 export default async function Home() {
   const schools = [
@@ -306,6 +307,9 @@ export default async function Home() {
         </div>
       </section>
 
+
+      {/* FAQ Section */}
+      <FaqSection />
 
     </div>
   );

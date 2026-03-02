@@ -30,15 +30,15 @@ const galleryItems = [
     },
     {
         id: 5,
-        title: "Adventure & Camping",
-        category: "Outdoor",
-        image: "/images/Camping.webp",
+        title: "Utatu Science Practicals",
+        category: "Laboratory",
+        image: "/images/gallery/cambridge-igcse-science-lab-electronics.jpeg",
     },
     {
         id: 6,
-        title: "Strategic Thinking",
-        category: "Club",
-        image: "/images/Chess.webp",
+        title: "STEM Lab Experiments",
+        category: "Academics",
+        image: "/images/gallery/cambridge-igcse-physics-practical-experiment.jpeg",
     },
 ];
 
