@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(request: Request) {
     try {
@@ -10,20 +12,10 @@ export async function POST(request: Request) {
             return NextResponse.json({ error: 'All fields are required' }, { status: 400 });
         }
 
-        const transporter = nodemailer.createTransport({
-            host: process.env.SMTP_HOST,
-            port: Number(process.env.SMTP_PORT) || 465,
-            secure: true, // true for 465, false for other ports
-            auth: {
-                user: process.env.SMTP_USER,
-                pass: process.env.SMTP_PASS,
-            },
-        });
-
-        const mailOptions = {
-            from: process.env.SMTP_USER, // Sender address must match authenticated user
-            replyTo: email, // Set reply-to as the person submitting the form
-            to: process.env.SMTP_USER, // Send to the configured admin email
+        const data = await resend.emails.send({
+            from: process.env.RESEND_FROM_EMAIL as string,
+            replyTo: email,
+            to: process.env.SMTP_USER as string,
             subject: `New Contact Form Submission: ${subject}`,
             text: `
 You have received a new contact form submission from the Utatu International website.
@@ -59,9 +51,12 @@ ${message}
             <div style="padding: 15px; background-color: #f9f9f9; border-left: 4px solid #0056b3; white-space: pre-wrap;">${message}</div>
         </div>
       `,
-        };
+        });
 
-        await transporter.sendMail(mailOptions);
+        if (data.error) {
+            console.error('Resend error:', data.error);
+            return NextResponse.json({ error: 'Failed to send message. Please try again later.' }, { status: 500 });
+        }
 
         return NextResponse.json({ success: true, message: 'Message sent successfully' }, { status: 200 });
     } catch (error) {
