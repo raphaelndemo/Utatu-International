@@ -11,7 +11,7 @@ const reviews = [
         date: "September 12, 2023",
         rating: 5,
         text: "The Cambridge Curriculum at Utatu has truly challenged my son to think critically and excel.",
-        avatar: "/images/Sarah.webp",
+        avatar: "/images/sarah.webp",
     },
     {
         name: "David Omondi",
