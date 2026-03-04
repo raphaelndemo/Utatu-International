@@ -9,25 +9,25 @@ const teamMembers = [
     {
         name: "John Doe",
         role: "Principal",
-        image: "/images/profile photo.webp",
+        image: "/images/profession.jpg",
         linkedin: "https://www.linkedin.com/",
     },
     {
         name: "Jane Smith",
-        role: "Head of Academics",
-        image: "/images/profile photo.webp",
+        role: "Administrator",
+        image: "/images/profession.jpg",
         linkedin: "https://www.linkedin.com/",
     },
     {
         name: "Michael Brown",
-        role: "Sports Coordinator",
-        image: "/images/profile photo.webp",
+        role: "Dean of Academics",
+        image: "/images/profession.jpg",
         linkedin: "https://www.linkedin.com/",
     },
     {
         name: "Sarah Wilson",
-        role: "Guidance Counselor",
-        image: "/images/profile photo.webp",
+        role: "Dean of Student",
+        image: "/images/profession.jpg",
         linkedin: "https://www.linkedin.com/",
     },
 ];

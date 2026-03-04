@@ -140,16 +140,16 @@ export default function ContactPage() {
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div className="space-y-2">
                                     <label htmlFor="firstName" className="text-sm font-medium">First Name</label>
-                                    <Input id="firstName" placeholder="John" value={formData.firstName} onChange={handleChange} required disabled={isSubmitting} />
+                                    <Input id="firstName" placeholder="first name" value={formData.firstName} onChange={handleChange} required disabled={isSubmitting} />
                                 </div>
                                 <div className="space-y-2">
                                     <label htmlFor="lastName" className="text-sm font-medium">Last Name</label>
-                                    <Input id="lastName" placeholder="Doe" value={formData.lastName} onChange={handleChange} required disabled={isSubmitting} />
+                                    <Input id="lastName" placeholder="last name" value={formData.lastName} onChange={handleChange} required disabled={isSubmitting} />
                                 </div>
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="email" className="text-sm font-medium">Email</label>
-                                <Input id="email" type="email" placeholder="john@example.com" value={formData.email} onChange={handleChange} required disabled={isSubmitting} />
+                                <Input id="email" type="email" placeholder="your email address" value={formData.email} onChange={handleChange} required disabled={isSubmitting} />
                             </div>
                             <div className="space-y-2">
                                 <label htmlFor="subject" className="text-sm font-medium">Subject</label>
