@@ -157,7 +157,7 @@ export default async function Home() {
       </section>
 
       {/* Schools Section */}
-      <section className="py-20 bg-muted/30">
+      <section id="our-schools" className="py-20 bg-muted/30">
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-end mb-12 px-4">
             <div className="space-y-2 text-left">

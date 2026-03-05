@@ -41,7 +41,7 @@ export default function AboutPage() {
 
                             <div className="pt-6">
                                 <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold px-8" asChild>
-                                    <Link href="/about">Our Schools</Link>
+                                    <Link href="/#our-schools">Our Schools</Link>
                                 </Button>
                             </div>
                         </div>
