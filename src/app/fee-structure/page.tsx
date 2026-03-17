@@ -28,7 +28,7 @@ export default function FeeStructure() {
         },
         {
             grade: "Year 10 & 11",
-            tuition: "88,000",
+            tuition: "90,000",
         },
         {
             grade: "Year 12 & 13",
@@ -42,7 +42,7 @@ export default function FeeStructure() {
             amount: "Admission fee of 3,500 is upon entry only (paid once)",
         },
         {
-            name: "External exam and GL",
+            name: "External exam ",
             amount: "(to be confirmed annually)",
         },
     ];
@@ -50,15 +50,15 @@ export default function FeeStructure() {
     const labFees = [
         {
             name: "Preparatory School",
-            amount: "4,000",
-        },
-        {
-            name: "Junior High School",
             amount: "6,000",
         },
         {
+            name: "Junior High School",
+            amount: "8,000",
+        },
+        {
             name: "Senior High School",
-            amount: "2,000 per subject",
+            amount: "4,000 per subject",
         },
         {
             name: "Activity fees",
@@ -79,6 +79,33 @@ export default function FeeStructure() {
                 <p className="text-lg md:text-xl text-muted-foreground leading-relaxed">
                     We believe that every child deserves a quality education. Our Cambridge fee structure is carefully crafted to eliminate unnecessary expenses, making it easier for families to invest in their child’s future.
                 </p>
+                <div className="pt-4">
+                    <a
+                        href="/docs/Utatu%20Fee%20Structure%20.pdf"
+                        download="Utatu-Fee-Structure.pdf"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-8 py-2"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="mr-2 h-4 w-4"
+                        >
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" x2="12" y1="15" y2="3" />
+                        </svg>
+                        Download Fee Structure PDF
+                    </a>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">

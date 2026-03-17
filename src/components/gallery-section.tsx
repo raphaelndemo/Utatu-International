@@ -8,7 +8,7 @@ const galleryItems = [
         id: 1,
         title: "Family & Community Day",
         category: "Community",
-        image: "/images/gallery/utatu-international-school-family-community-day.jpg",
+        image: "/images/gallery/utatu-international-school-outdoor-learning-ruiru-student-smiling.jpg",
     },
     {
         id: 2,

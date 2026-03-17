@@ -153,6 +153,10 @@ export function Header() {
             <PortalModal />
           </div>
 
+          <Button variant="outline" asChild className="mr-2 border-primary text-primary hover:bg-primary/10">
+            <Link href="/fee-structure">Fee Structure</Link>
+          </Button>
+
           <Button asChild className="bg-secondary text-secondary-foreground hover:text-white">
             <Link href="/contact">Apply Now</Link>
           </Button>
@@ -247,7 +251,12 @@ export function Header() {
               </div>
 
               {/* Footer CTA */}
-              <div className="p-6 border-t bg-muted/30">
+              <div className="p-6 border-t bg-muted/30 flex flex-col gap-3">
+                <Button asChild variant="outline" size="lg" className="w-full font-bold shadow-sm border-primary text-primary hover:bg-primary/10">
+                  <Link href="/fee-structure" onClick={() => setIsOpen(false)}>
+                    Fee Structure
+                  </Link>
+                </Button>
                 <Button asChild size="lg" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg">
                   <Link href="/contact" onClick={() => setIsOpen(false)}>
                     Apply Now

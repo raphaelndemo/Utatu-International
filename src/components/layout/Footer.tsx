@@ -1,5 +1,22 @@
 import Link from "next/link";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { Facebook, Instagram, Mail, Phone, MapPin } from "lucide-react";
+
+const TikTokIcon = ({ className }: { className?: string }) => (
+    <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className={className}
+    >
+        <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+);
 
 export function Footer() {
     return (
@@ -69,17 +86,17 @@ export function Footer() {
                     <div>
                         <h4 className="mb-4 text-lg font-semibold">Follow Us</h4>
                         <div className="flex gap-4">
-                            <Link href="#" className="rounded-full bg-primary-foreground/10 p-2 hover:bg-secondary hover:text-secondary-foreground transition-colors">
+                            <Link href="https://www.facebook.com/share/1FfE8gk27j/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary-foreground/10 p-2 hover:bg-secondary hover:text-secondary-foreground transition-colors">
                                 <Facebook className="h-5 w-5" />
                                 <span className="sr-only">Facebook</span>
                             </Link>
-                            <Link href="#" className="rounded-full bg-primary-foreground/10 p-2 hover:bg-secondary hover:text-secondary-foreground transition-colors">
-                                <Twitter className="h-5 w-5" />
-                                <span className="sr-only">Twitter</span>
-                            </Link>
-                            <Link href="#" className="rounded-full bg-primary-foreground/10 p-2 hover:bg-secondary hover:text-secondary-foreground transition-colors">
+                            <Link href="https://www.instagram.com/utatuschool?igsh=aDR6a2N0ZzFycWU1&utm_source=qr" target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary-foreground/10 p-2 hover:bg-secondary hover:text-secondary-foreground transition-colors">
                                 <Instagram className="h-5 w-5" />
                                 <span className="sr-only">Instagram</span>
+                            </Link>
+                            <Link href="https://www.tiktok.com/@utatuinternationalschool?_r=1&_t=ZS-94ly9J3byoX" target="_blank" rel="noopener noreferrer" className="rounded-full bg-primary-foreground/10 p-2 hover:bg-secondary hover:text-secondary-foreground transition-colors">
+                                <TikTokIcon className="h-5 w-5" />
+                                <span className="sr-only">TikTok</span>
                             </Link>
                         </div>
                     </div>
