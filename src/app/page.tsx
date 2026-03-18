@@ -127,8 +127,8 @@ export default async function Home() {
               <p>
                 <span className="font-semibold text-primary">Utatu</span> is one of the best homeschooling international schools in
                 Kenya offering a world-class Cambridge Curriculum. We offer
-                learning from Kindergarten to Year 13 through a flexible hybrid
-                homeschooling model, both online and physical learning at your
+                learning from Kindergarten to Year 13 through a <Link href="/cambridge-school-fees-kenya" className="text-secondary hover:underline font-medium">hybrid Cambridge program</Link>,
+                providing both online and physical learning at your
                 home.
               </p>
               <p>

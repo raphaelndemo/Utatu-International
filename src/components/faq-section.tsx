@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-const faqs = [
+const defaultFaqs = [
     {
         question: "What curriculum do you follow?",
         answer: (
@@ -48,7 +48,16 @@ const faqs = [
     },
 ];
 
-export function FaqSection() {
+interface FaqItem {
+    question: string;
+    answer: React.ReactNode;
+}
+
+interface FaqSectionProps {
+    faqs?: FaqItem[];
+}
+
+export function FaqSection({ faqs = defaultFaqs }: FaqSectionProps) {
     const [openIndex, setOpenIndex] = useState<number | null>(1); // Default open the second one as in screenshot
 
     const toggleFaq = (index: number) => {

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -66,7 +67,7 @@ export default function ContactPage() {
                 <div className="text-center mb-16 space-y-4">
                     <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary">Contact Us</h1>
                     <p className="text-lg text-muted-foreground">
-                        Thank you for visiting our website. Whether you have questions about our programs, need guidance on admissions, or want to schedule a visit, we’re here to assist you. If you are interested in enrolling your child at Utatu International School, kindly fill out the form below, and our admissions team will get in touch with you shortly.
+                        Thank you for visiting our website. Whether you have questions about our programs, need guidance on admissions or our <Link href="/cambridge-school-fees-kenya" className="text-secondary hover:underline font-medium">affordable Cambridge school fees</Link>, or want to schedule a visit, we’re here to assist you. If you are interested in enrolling your child at Utatu International School, kindly fill out the form below, and our admissions team will get in touch with you shortly.
                     </p>
                 </div>
 

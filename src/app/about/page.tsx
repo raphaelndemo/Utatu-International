@@ -247,7 +247,7 @@ export default function AboutPage() {
                                     </div>
                                     <h3 className="text-xl font-bold font-heading">Affordable, Cost-Effective Homeschooling</h3>
                                     <p className="text-primary-foreground/70 text-lg leading-relaxed">
-                                        Premium international education without extra costs like transport, uniforms, or boarding—quality education made accessible.
+                                        Premium international education without extra costs like transport, uniforms, or boarding—<Link href="/cambridge-school-fees-kenya" className="text-secondary hover:underline">flexible Cambridge education</Link> made accessible.
                                     </p>
                                 </div>
 
