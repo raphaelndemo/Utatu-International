@@ -7,6 +7,11 @@ const nextConfig = {
                 destination: '/cambridge-school-fees-kenya',
                 permanent: true,
             },
+            {
+                source: '/cambridge-fee-structure-in-kenya',
+                destination: '/cambridge-school-fees-kenya',
+                permanent: true,
+            },
         ]
     },
     images: {
