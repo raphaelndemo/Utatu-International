@@ -6,11 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Calendar, ArrowRight } from "lucide-react";
 import { client } from "@/lib/sanity/client";
-import { postsQuery, eventsQuery } from "@/lib/sanity/queries";
-import { SanityPost, SanityEvent } from "@/lib/sanity/types";
+import { postsQuery } from "@/lib/sanity/queries";
+import { SanityPost } from "@/lib/sanity/types";
 import { urlFor } from "@/lib/sanity/image";
 import { GallerySection } from "@/components/gallery-section";
 import { FaqSection } from "@/components/faq-section";
+import { fetchCalendarEvents } from "@/lib/ical";
 
 export default async function Home() {
   const schools = [
@@ -48,9 +49,12 @@ export default async function Home() {
 
   ];
 
-  // Fetch posts and events from Sanity
+  // Fetch posts from Sanity
   const sanityPosts: SanityPost[] = await client.fetch(postsQuery);
-  const sanityEvents: SanityEvent[] = await client.fetch(eventsQuery);
+
+  // Fetch events from Google Calendar ICS
+  const calendarId = "utatuinternational@gmail.com";
+  const googleEvents = await fetchCalendarEvents(calendarId);
 
   // Transform Sanity posts to match existing UI structure
   const posts = sanityPosts.map((post) => ({
@@ -65,17 +69,24 @@ export default async function Home() {
     image: post.mainImage ? urlFor(post.mainImage).width(600).height(400).url() : 'https://images.unsplash.com/photo-1427504743050-6605296530a7?q=80&w=2070&auto=format&fit=crop',
   }));
 
-  // Transform Sanity events to match existing UI structure
-  const events = sanityEvents.map((event) => {
-    const eventDate = new Date(event.eventDate);
-    return {
-      day: eventDate.getDate().toString(),
-      month: eventDate.toLocaleDateString('en-US', { month: 'short' }),
-      title: event.title,
-      time: event.time,
-      location: event.location,
-    };
-  });
+  // Filter and transform Google events to match UI structure
+  const upcomingGoogleEvents = googleEvents
+    .filter((event) => {
+        const now = new Date();
+        now.setHours(0, 0, 0, 0);
+        const end = event.end ? new Date(event.end) : new Date(event.date);
+        return end >= now;
+    })
+    .sort((a, b) => a.date.getTime() - b.date.getTime())
+    .slice(0, 5);
+
+  const events = upcomingGoogleEvents.map((event) => ({
+    day: event.date.getDate().toString(),
+    month: event.date.toLocaleString('default', { month: 'short' }),
+    title: event.title,
+    time: "All Day",
+    location: event.location || "Utatu Main Campus",
+  }));
 
   return (
     <div className="flex flex-col min-h-screen">

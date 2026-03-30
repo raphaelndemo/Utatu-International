@@ -2,6 +2,7 @@
 
 import { Calendar, Clock, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 
 interface Event {
     id: string;
@@ -39,24 +40,20 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
                 <Button variant="outline" size="sm">Download Term Dates PDF</Button>
             </div>
 
-            <div className="divide-y rounded-xl border bg-white shadow-sm">
+            <div className="space-y-6">
                 {upcomingEvents.map((event) => (
-                    <div key={event.id} className="flex items-start gap-4 p-4 transition-colors hover:bg-muted/50">
-                        <div className="flex flex-col items-center justify-center rounded-lg border bg-muted/30 p-2 min-w-[60px]">
-                            <span className="text-xs font-bold text-muted-foreground uppercase">{event.date.toLocaleString('default', { month: 'short' })}</span>
-                            <span className="text-xl font-bold text-primary">{event.date.getDate()}</span>
+                    <Card key={event.id} className="flex overflow-hidden border-none shadow-sm hover:shadow-md transition-shadow">
+                        <div className="w-20 bg-primary text-primary-foreground flex flex-col items-center justify-center p-2 text-center shrink-0">
+                            <span className="text-2xl font-bold">{event.date.getDate()}</span>
+                            <span className="text-sm uppercase">{event.date.toLocaleString('default', { month: 'short' })}</span>
                         </div>
-                        <div className="space-y-1">
-                            <h4 className="font-semibold text-foreground">{event.title}</h4>
-                            <div className="flex items-center gap-4 text-xs text-muted-foreground">
-                                <div className="flex items-center gap-1">
-                                    <Clock className="h-3 w-3" />
-                                    <span>All Day</span>
-                                </div>
-                                <div className="flex items-center gap-1">
-                                    <MapPin className="h-3 w-3" />
-                                    <span>Utatu Main Campus</span>
-                                </div>
+                        <div className="flex-1 p-4">
+                            <h3 className="font-bold text-lg mb-1">{event.title}</h3>
+                            <div className="text-sm text-muted-foreground flex items-center gap-2 mb-1">
+                                <Clock className="h-3 w-3" /> All Day
+                            </div>
+                            <div className="text-sm text-muted-foreground flex items-center gap-2 mb-2">
+                                <MapPin className="h-3 w-3" /> Utatu Main Campus
                             </div>
                             <span className={`inline-flex items-center rounded-full px-2 py-0.5 text-[10px] font-medium ${event.category === "Academic" ? "bg-blue-100 text-blue-700" :
                                 event.category === "Exams" ? "bg-red-100 text-red-700" :
@@ -66,7 +63,7 @@ export function UpcomingEvents({ events }: UpcomingEventsProps) {
                                 {event.category}
                             </span>
                         </div>
-                    </div>
+                    </Card>
                 ))}
             </div>
         </div>
