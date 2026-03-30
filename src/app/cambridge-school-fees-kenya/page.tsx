@@ -257,13 +257,28 @@ export default function FeeStructure() {
                                 </li>
                             </ul>
 
-                            <div className="pt-4 border-t">
-                                <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary mb-2">
+                            <div className="pt-4 border-t border-primary/10">
+                                <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary mb-4">
                                     Payment details:
                                 </h3>
-                                <p className="text-base sm:text-lg lg:text-xl font-medium break-words">
-                                    Paybill no. <span className="font-bold text-foreground">542542</span> | Account no. <span className="font-bold text-foreground">636747</span>
-                                </p>
+
+                                <div className="space-y-4">
+                                    <div>
+                                        <h4 className="font-bold text-foreground/80 tracking-wide uppercase text-sm mb-1">M-PESA</h4>
+                                        <p className="text-base sm:text-lg font-medium break-words">
+                                            Paybill no. <span className="font-bold text-foreground">542542</span> | Account no. <span className="font-bold text-foreground">636747</span>
+                                        </p>
+                                    </div>
+
+                                    <div className="pt-4 border-t border-primary/10">
+                                        <h4 className="font-bold text-foreground/80 tracking-wide uppercase text-sm mb-1">BANKS</h4>
+                                        <div className="text-base sm:text-lg font-medium break-words">
+                                            <p className="text-primary font-bold">I&amp;M Bank</p>
+                                            <p className="mt-1">Account Number: <span className="font-bold text-foreground">03503670976151</span></p>
+                                            <p>Account Name: <span className="font-bold text-foreground">UTATU STEM INTERNATIONAL</span></p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
