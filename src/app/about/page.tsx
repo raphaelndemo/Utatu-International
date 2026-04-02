@@ -282,7 +282,7 @@ export default function AboutPage() {
                             We welcome families from all backgrounds to join the Utatu International family.
                         </p>
                         <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90" asChild>
-                            <Link href="/contact">Apply Now</Link>
+                            <Link href="/admission">Admission</Link>
                         </Button>
                     </div>
                 </div>

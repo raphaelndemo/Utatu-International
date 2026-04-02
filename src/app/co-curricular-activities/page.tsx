@@ -157,6 +157,23 @@ export default function CoCurricularActivitiesPage() {
             </section>
 
 
+            {/* CTA Section */}
+            <div className="container py-12 md:py-16">
+                <div className="max-w-4xl mx-auto space-y-12">
+                    <div className="bg-muted/50 border border-primary/10 p-8 md:p-12 rounded-xl text-center space-y-6">
+                        <h3 className="text-2xl md:text-3xl font-medium font-heading tracking-wide text-primary">Ready to join our community?</h3>
+                        <p className="text-muted-foreground text-lg">
+                            We welcome families from all backgrounds to join the Utatu International family.
+                        </p>
+                        <Link 
+                            href="/admission" 
+                            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-base transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 shadow-md h-12 px-10 py-3 bg-secondary text-secondary-foreground hover:bg-secondary/90 hover:-translate-y-0.5 font-bold"
+                        >
+                            Admission
+                        </Link>
+                    </div>
+                </div>
+            </div>
 
         </div>
     );

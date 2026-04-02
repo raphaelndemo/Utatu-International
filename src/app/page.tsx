@@ -115,7 +115,7 @@ export default async function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center px-4">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto" asChild>
-              <Link href="/contact">Enroll Now</Link>
+              <Link href="/admission">Admission</Link>
             </Button>
             <Button size="lg" variant="outline" className="bg-transparent border-white text-white hover:bg-white hover:text-primary w-full sm:w-auto" asChild>
               <Link href="/about">Learn More</Link>
@@ -231,7 +231,7 @@ export default async function Home() {
           </p>
           <div className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 justify-center items-center px-4">
             <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary/90 w-full sm:w-auto" asChild>
-              <Link href="/contact">Apply Now</Link>
+              <Link href="/admission">Admission</Link>
             </Button>
             <a
               href="/docs/Utatu%20Fee%20Structure%20.pdf"

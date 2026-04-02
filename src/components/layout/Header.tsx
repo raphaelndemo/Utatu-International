@@ -158,7 +158,7 @@ export function Header() {
           </Button>
 
           <Button asChild className="bg-secondary text-secondary-foreground hover:text-white">
-            <Link href="/contact">Apply Now</Link>
+            <Link href="/admission">Admission</Link>
           </Button>
         </div>
 
@@ -258,8 +258,8 @@ export function Header() {
                   </Link>
                 </Button>
                 <Button asChild size="lg" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg">
-                  <Link href="/contact" onClick={() => setIsOpen(false)}>
-                    Apply Now
+                  <Link href="/admission" onClick={() => setIsOpen(false)}>
+                    Admission
                   </Link>
                 </Button>
               </div>

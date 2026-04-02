@@ -149,10 +149,10 @@ export default async function PostPage({ params }: PostPageProps) {
               Discover the perfect learning environment for your child at Utatu International School.
             </p>
             <Link
-              href="/contact"
+              href="/admission"
               className="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg shadow-sm transition duration-300 w-full"
             >
-              Apply Now
+              Admission
             </Link>
           </div>
         </aside>

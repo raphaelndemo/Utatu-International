@@ -588,7 +588,7 @@ export default async function SchoolPage({
                         {/* Action Buttons */}
                         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-10 not-prose">
                             <Link
-                                href="/contact"
+                                href="/admission"
                                 className="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-medium px-6 py-3 rounded-lg shadow-md transition duration-300"
                             >
                                 Apply for {school.title}
@@ -642,10 +642,10 @@ export default async function SchoolPage({
                             </CardHeader>
                             <CardContent>
                                 <Link
-                                    href="/contact"
+                                    href="/admission"
                                     className="inline-block bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-semibold px-6 py-3 rounded-lg shadow-sm transition duration-300 w-full"
                                 >
-                                    Apply Now
+                                    Admission
                                 </Link>
                             </CardContent>
                         </Card>
