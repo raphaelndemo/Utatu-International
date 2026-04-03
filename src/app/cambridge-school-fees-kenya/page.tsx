@@ -67,7 +67,7 @@ export default function FeeStructure() {
         },
         {
             grade: "Year 12 & 13",
-            tuition: "120,000",
+            tuition: "130,000",
         },
     ];
 

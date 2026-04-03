@@ -223,9 +223,9 @@ export default function AboutPage() {
                                     <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm text-secondary">
                                         <GraduationCap className="w-6 h-6" />
                                     </div>
-                                    <h3 className="text-xl font-bold font-heading">Cambridge IGCSE Online Curriculum</h3>
-                                    <p className="text-primary-foreground/70 text-lg leading-relaxed">
-                                        Internationally recognized Cambridge IGCSE education delivered through a structured, high-quality online homeschooling program.
+                                    <h3 className="text-xl font-bold font-heading">Cambridge IGCSE & A-Level Curriculum</h3>
+                                    <p className="text-primary-foreground/70 text-lg leading-relaxed">         
+                                        Internationally recognized Cambridge IGCSE & A-Level education delivered through a structured, high-quality online homeschooling program.
                                     </p>
                                 </div>
 

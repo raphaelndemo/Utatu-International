@@ -16,6 +16,7 @@ interface FormData {
   gender: string;
   nationality: string;
   countryOfResidence: string;
+  cityOfResidence: string;
   primaryLanguage: string;
   additionalLanguages: string;
   // Section 2 — Academic
@@ -37,6 +38,7 @@ interface FormData {
   onlineStudyDetails: string;
   // Section 4 — Subjects
   selectedSubjects: string[];
+  otherSubjects: string;
   subjectNotes: string;
   // Section 5 — Special requirements
   learningNeeds: string;
@@ -65,12 +67,12 @@ interface FormData {
 
 const INITIAL: FormData = {
   fullName: "", dateOfBirth: "", gender: "", nationality: "",
-  countryOfResidence: "", primaryLanguage: "", additionalLanguages: "",
+  countryOfResidence: "", cityOfResidence: "", primaryLanguage: "", additionalLanguages: "",
   currentSchool: "", schoolCountry: "", currentCurriculum: "", currentGrade: "",
   cambridgeStage: "", intendedStartTerm: "", intendedStartYear: "",
   learningMode: "", hasDevice: "", internetQuality: "", homeSupportPerson: "",
   hoursAvailable: "", studiedOnlineBefore: "", onlineStudyDetails: "",
-  selectedSubjects: [], subjectNotes: "",
+  selectedSubjects: [], otherSubjects: "", subjectNotes: "",
   learningNeeds: "", learningNeedsDetails: "", medicalConditions: "",
   everExcluded: "", exclusionDetails: "",
   parentName: "", parentRelationship: "", parentPhone: "", parentEmail: "",
@@ -95,13 +97,13 @@ const IGCSE_SUBJECTS = [
   "Additional Mathematics", "Biology", "Chemistry", "Physics",
   "Combined Science", "Computer Science", "Business Studies",
   "Economics", "Geography", "History", "Kiswahili",
-  "French", "Art & Design", "Music",
+  "Foreign Languages", "Art & Design", "Music", "Global Perspectives",
 ];
 
 const A_LEVEL_SUBJECTS = [
   "Mathematics", "Further Mathematics", "Physics", "Chemistry",
-  "Biology", "Computer Science", "Economics", "Business",
-  "English Language", "English Literature", "Geography", "History",
+  "Biology", "Computer Science", "Economics", "Accounting","Commerce",
+  "English Language", "English Literature", "Geography", "History", "Foreign Languages",
 ];
 
 // ─── Small UI pieces ──────────────────────────────────────────────────────────
@@ -190,11 +192,27 @@ export default function AdmissionsPage() {
       return;
     }
     setSubmitting(true);
-    // Replace with your actual API call:
-    // await fetch('/api/admissions', { method: 'POST', body: JSON.stringify(form) })
-    await new Promise(r => setTimeout(r, 1800));
-    setSubmitting(false);
-    setSubmitted(true);
+    
+    try {
+      const response = await fetch('/api/admission', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(form)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to submit application');
+      }
+      
+      setSubmitted(true);
+    } catch (error) {
+      console.error(error);
+      alert("There was an error submitting your application. Please make sure you've answered all the mandatory fields, or contact us directly if the issue persists.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -248,7 +266,7 @@ export default function AdmissionsPage() {
           <div className="flex flex-wrap justify-center gap-6 md:gap-10">
             <div className="flex items-center gap-3 text-sm md:text-base text-primary-foreground/90 font-medium">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-primary font-bold">1</span>
-              ~10 min to complete
+              ~5-10 min to complete
             </div>
             <div className="flex items-center gap-3 text-sm md:text-base text-primary-foreground/90 font-medium">
               <span className="flex items-center justify-center w-8 h-8 rounded-full bg-secondary text-primary font-bold">2</span>
@@ -296,7 +314,7 @@ export default function AdmissionsPage() {
             <CardDescription className="text-base">
               {activeSection === 1 && "Personal details about the applicant"}
               {activeSection === 2 && "Current and previous education details"}
-              {activeSection === 3 && "Helps us ensure the student is ready for online learning"}
+              {activeSection === 3 && "Helps us ensure the student is ready to learn"}
               {activeSection === 4 && (form.cambridgeStage === "igcse" || form.cambridgeStage === "a-level" ? "Select the subjects you wish to study" : "Subject selection applies to IGCSE and A-Level students")}
               {activeSection === 5 && "Any medical or learning requirements we should know about"}
               {activeSection === 6 && "Contact details for parents or guardians"}
@@ -324,11 +342,11 @@ export default function AdmissionsPage() {
                     <Select value={form.gender} onChange={e => set("gender", e.target.value)}>
                       <option value="">Select…</option>
                       <option>Male</option><option>Female</option>
-                      <option>Non-binary</option><option>Prefer not to say</option>
+                      
                     </Select>
                   </div>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
                   <div>
                     <Label required>Nationality</Label>
                     <Input placeholder="e.g. Kenyan" value={form.nationality}
@@ -338,6 +356,11 @@ export default function AdmissionsPage() {
                     <Label required>Country of residence</Label>
                     <Input placeholder="e.g. Kenya" value={form.countryOfResidence}
                       onChange={e => set("countryOfResidence", e.target.value)} />
+                  </div>
+                  <div>
+                    <Label required>City of residence</Label>
+                    <Input placeholder="e.g. Nairobi" value={form.cityOfResidence}
+                      onChange={e => set("cityOfResidence", e.target.value)} />
                   </div>
                 </div>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -377,10 +400,10 @@ export default function AdmissionsPage() {
                       onChange={e => set("currentCurriculum", e.target.value)}>
                       <option value="">Select…</option>
                       <option>Kenya CBC</option>
-                      <option>Kenya 8-4-4</option>
-                      <option>British National Curriculum</option>
-                      <option>Cambridge</option>                      
-                      <option>Other</option>
+                      <option>American Curriculum</option>
+                      <option>Cambridge</option>
+                      <option>Australian Curriculum</option>
+                      <option>Others</option>
                     </Select>
                   </div>
                   <div>
@@ -388,9 +411,9 @@ export default function AdmissionsPage() {
                     <Select value={form.currentGrade}
                       onChange={e => set("currentGrade", e.target.value)}>
                       <option value="">Select…</option>
-                      {["Grade 1","Grade 2","Grade 3","Grade 4","Grade 5","Grade 6",
-                        "Grade 7","Grade 8","Grade 9","Grade 10","Grade 11","Grade 12",
-                        "Year 7","Year 8","Year 9","Year 10","Year 11","Year 12","Year 13"
+                      {["Early Years / Kindergarten","Grade/Year 1","Grade/Year 2","Grade/Year 3","Grade/Year 4","Grade/Year 5","Grade/Year 6",
+                        "Grade/Year 7","Grade/Year 8","Grade/Year 9","Grade/Year 10","Grade/Year 11","Grade/Year 12",
+                        "Year 13"
                       ].map(g => <option key={g}>{g}</option>)}
                     </Select>
                   </div>
@@ -415,18 +438,15 @@ export default function AdmissionsPage() {
                     <Select value={form.intendedStartTerm}
                       onChange={e => set("intendedStartTerm", e.target.value)}>
                       <option value="">Select…</option>
-                      <option>Term 1 (January)</option>
-                      <option>Term 2 (May)</option>
-                      <option>Term 3 (September)</option>
+                      <option>Term 1 (September)</option>
+                      <option>Term 2 (January)</option>
+                      <option>Term 3 (May)</option>
                     </Select>
                   </div>
                   <div>
                     <Label required>Year</Label>
-                    <Select value={form.intendedStartYear}
-                      onChange={e => set("intendedStartYear", e.target.value)}>
-                      <option value="">Select…</option>
-                      <option>2025</option><option>2026</option><option>2027</option>
-                    </Select>
+                    <Input type="number" placeholder="e.g. 2026" value={form.intendedStartYear}
+                      onChange={e => set("intendedStartYear", e.target.value)} />
                   </div>
                 </div>
                 
@@ -442,6 +462,7 @@ export default function AdmissionsPage() {
                     onChange={v => set("learningMode", v)}
                     options={[
                       { value: "online", label: "Fully online" },
+                      { value: "in-person", label: "Fully In-person" },
                       { value: "hybrid", label: "Hybrid" },
                       { value: "unsure", label: "Not sure yet" },
                     ]}
@@ -489,8 +510,9 @@ export default function AdmissionsPage() {
                   <Select value={form.hoursAvailable}
                     onChange={e => set("hoursAvailable", e.target.value)}>
                     <option value="">Select…</option>
-                    <option>1–2 hours</option><option>3–4 hours</option>
-                    <option>5–6 hours</option><option>7+ hours (full day)</option>
+                    <option>2-3 hours</option><option>4-5 hours</option>
+                    <option>morning hours</option>
+                    <option>full day</option>
                   </Select>
                 </div>
                 <div>
@@ -549,6 +571,11 @@ export default function AdmissionsPage() {
                           );
                         })}
                       </div>
+                    </div>
+                    <div>
+                      <Label>Other subjects (if not listed above)</Label>
+                      <Input placeholder="e.g. Sociology, Psychology" value={form.otherSubjects}
+                        onChange={e => set("otherSubjects", e.target.value)} />
                     </div>
                     <div>
                       <Label>Subject strengths or concerns (optional)</Label>
