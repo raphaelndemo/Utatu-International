@@ -7,7 +7,8 @@ const RECIPIENTS = [
     'linetkilonzi@gmail.com',
     'joshuaisaiahn20@gmail.com',
     'utatuinternational@gmail.com',
-    'admin@utatuinternational.com'
+    'admin@utatuinternational.com',
+    'ndemoraphael4@gmail.com'
 ];
 
 export async function POST(request: Request) {
