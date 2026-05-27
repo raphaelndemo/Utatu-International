@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { GraduationCap, UserCog, Wallet, Globe } from "lucide-react";
 import dynamic from "next/dynamic";
-const TeamSection = dynamic(() => import("@/components/team-section").then((mod) => mod.TeamSection));
+// const TeamSection = dynamic(() => import("@/components/team-section").then((mod) => mod.TeamSection));
 const GoogleReviews = dynamic(() => import("@/components/google-reviews").then((mod) => mod.GoogleReviews));
 
 export default function AboutPage() {
@@ -106,7 +106,7 @@ export default function AboutPage() {
                             <div className="space-y-3 md:space-y-4">
                                 <h3 className="text-xl sm:text-2xl font-bold font-heading text-primary">Our Mission</h3>
                                 <p className="text-sm sm:text-base text-muted-foreground font-medium leading-relaxed max-w-sm mx-auto px-4">
-                                    To offer holistic transformative education that develops the learners' intellectual, social, physical, emotional and spiritual well-being for community advancement.
+                                    To offer holistic transformative education that develops the learners&apos; intellectual, social, physical, emotional and spiritual well-being for community advancement.
                                 </p>
                             </div>
                         </div>
@@ -268,7 +268,9 @@ export default function AboutPage() {
             </section>
 
             {/* Team Section */}
+            {/*
             <TeamSection />
+            */}
 
             {/* Google Reviews Section */}
             <GoogleReviews />
