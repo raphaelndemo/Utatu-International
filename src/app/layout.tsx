@@ -46,6 +46,49 @@ export const viewport: Viewport = {
   themeColor: "#001A00",
 };
 
+const schoolStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "School",
+  "name": "Utatu International School",
+  "url": "https://www.utatuinternational.com",
+  "logo": "https://www.utatuinternational.com/web-app-manifest-512x512.png",
+  "description": "Utatu International School offers a world-class Cambridge Curriculum through a flexible hybrid and online homeschooling model from Kindergarten to Year 13 in Kenya.",
+  "telephone": "+254758758784",
+  "email": "info@utatuinternational.com",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Karen Road",
+    "addressLocality": "Karen",
+    "addressRegion": "Nairobi",
+    "postalCode": "00502",
+    "addressCountry": "KE"
+  },
+  "sameAs": [
+    "https://www.facebook.com/utatuinternationalschool",
+    "https://www.instagram.com/utatuinternational",
+    "https://www.tiktok.com/@utatuinternational",
+    "https://www.linkedin.com/company/utatu-international-school"
+  ],
+  "contactPoint": [
+    {
+      "@type": "ContactPoint",
+      "telephone": "+254758758784",
+      "contactType": "customer service",
+      "areaServed": "KE",
+      "availableLanguage": ["English"]
+    }
+  ],
+  "foundingDate": "2022",
+  "curriculum": "Cambridge International",
+  "keywords": [
+    "Cambridge Curriculum Kenya",
+    "Homeschooling Kenya",
+    "Online International School",
+    "IGCSE Online",
+    "A Level Online"
+  ]
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -56,6 +99,12 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${playfair.variable} antialiased font-sans flex min-h-screen flex-col`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(schoolStructuredData),
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
