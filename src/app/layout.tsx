@@ -18,27 +18,64 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'https://www.utatuinternational.com'),
   title: {
     template: "%s | Utatu International School",
-    default: "Utatu International School | Cambridge Education in Kenya",
+    default: "Best Homeschool in Kenya | Affordable Cambridge Curriculum | Utatu International School",
   },
-  description: "Utatu International offers a world-class Cambridge Curriculum through a flexible hybrid and online homeschooling model from Kindergarten to Year 13.",
-  keywords: ["Cambridge Curriculum Kenya", "Homeschooling Kenya", "Online International School", "IGCSE Online", "A Level Online"],
+  description: "Kenya's best affordable, flexible Cambridge homeschool for KG–Year 13. Hybrid in-person & online, Special Needs support, Christian values, family-friendly. Karen, Nairobi.",
+  keywords: [
+    // Core identity
+    "best homeschool in Kenya",
+    "best homeschool Kenya",
+    "best Cambridge school in Kenya",
+    // Affordability
+    "most affordable homeschool Kenya",
+    "most affordable Cambridge curriculum Kenya",
+    "best affordable Cambridge curriculum",
+    // Flexibility & hybrid
+    "best flexible homeschooling curriculum",
+    "best flexible homeschooling curriculum in Kenya",
+    "best hybrid homeschooling Kenya",
+    "online and in-person homeschool Kenya",
+    // Special needs
+    "best special needs education Kenya",
+    "best special needs Cambridge curriculum",
+    "inclusive homeschool Kenya",
+    // Values & community
+    "best family school Kenya",
+    "best friendly school Kenya",
+    "best children friendly school Kenya",
+    "best Christian school Kenya",
+    "Christian homeschool Kenya",
+    // Existing
+    "Cambridge Curriculum Kenya",
+    "Homeschooling Kenya",
+    "Online International School",
+    "IGCSE Online Kenya",
+    "A Level Online Kenya",
+    "homeschool Nairobi",
+    "Cambridge homeschool Nairobi",
+  ],
   alternates: {
     canonical: '/',
   },
   manifest: "/manifest.json",
   verification: {
-    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION, // e.g. "your-google-verification-code"
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
     other: {
-      "msvalidate.01": [process.env.NEXT_PUBLIC_BING_VERIFICATION || ""], // Bing Webmaster Tools
+      "msvalidate.01": [process.env.NEXT_PUBLIC_BING_VERIFICATION || ""],
     },
   },
   openGraph: {
-    title: "Utatu International School",
-    description: "World-class Cambridge education in Kenya",
+    title: "Utatu International School | Best Affordable Cambridge Homeschool in Kenya",
+    description: "Kenya's most flexible, affordable Cambridge homeschool. Hybrid online & in-person, Special Needs support, Christian & family-friendly. KG to Year 13 in Karen, Nairobi.",
     url: "https://www.utatuinternational.com",
     siteName: "Utatu International School",
     locale: "en_KE",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Affordable Cambridge Homeschool in Kenya | Utatu International",
+    description: "Flexible, affordable Cambridge education KG–Year 13. Hybrid, Special Needs support, Christian values. Karen, Nairobi.",
   },
 };
 
@@ -52,7 +89,7 @@ const schoolStructuredData = {
   "name": "Utatu International School",
   "url": "https://www.utatuinternational.com",
   "logo": "https://www.utatuinternational.com/web-app-manifest-512x512.png",
-  "description": "Utatu International School offers a world-class Cambridge Curriculum through a flexible hybrid and online homeschooling model from Kindergarten to Year 13 in Kenya.",
+  "description": "Utatu International School is Kenya's best affordable, flexible Cambridge homeschool offering hybrid in-person and online education from Kindergarten to Year 13. We provide Special Needs support, Christian values, and a family-friendly environment in Karen, Nairobi.",
   "telephone": "+254758758784",
   "email": "info@utatuinternational.com",
   "address": {
@@ -80,12 +117,20 @@ const schoolStructuredData = {
   ],
   "foundingDate": "2022",
   "curriculum": "Cambridge International",
+  "isAccessibleForFree": false,
+  "hasMap": "https://maps.google.com/?q=Karen+Road+Nairobi+Kenya",
   "keywords": [
-    "Cambridge Curriculum Kenya",
-    "Homeschooling Kenya",
-    "Online International School",
-    "IGCSE Online",
-    "A Level Online"
+    "best homeschool Kenya",
+    "best Cambridge school Kenya",
+    "affordable Cambridge curriculum Kenya",
+    "flexible homeschooling Kenya",
+    "hybrid homeschool Kenya",
+    "special needs education Kenya",
+    "Christian school Kenya",
+    "family school Kenya",
+    "Cambridge homeschool Nairobi",
+    "IGCSE Online Kenya",
+    "A Level Online Kenya",
   ]
 };
 
