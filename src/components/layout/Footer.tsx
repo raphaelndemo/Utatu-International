@@ -44,6 +44,11 @@ export function Footer() {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/cambridge-school-fees-kenya" className="hover:text-secondary transition-colors">
+                                    Fee Structure
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/schools/foundation-stage" className="hover:text-secondary transition-colors">
                                     Foundation Stage
                                 </Link>

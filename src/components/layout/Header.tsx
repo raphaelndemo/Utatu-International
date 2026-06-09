@@ -58,7 +58,7 @@ export function Header() {
     { title: "Why Choose Us", href: "/about#why-choose-us" },
     { title: "Co-Curricular Activities", href: "/co-curricular-activities" },
     { title: "School Calendar", href: "/school-calendar" },
-
+    { title: "Fee Structure", href: "/cambridge-school-fees-kenya" },
   ];
 
   return (
@@ -152,10 +152,6 @@ export function Header() {
           <div className="ml-4 mr-2">
             <PortalModal />
           </div>
-
-          <Button variant="outline" asChild className="mr-2 border-primary text-primary hover:bg-primary/10">
-            <Link href="/cambridge-school-fees-kenya">Fee Structure</Link>
-          </Button>
 
           <Button asChild className="bg-secondary text-secondary-foreground hover:text-white">
             <Link href="/admission">Admission</Link>
@@ -252,11 +248,6 @@ export function Header() {
 
               {/* Footer CTA */}
               <div className="p-6 border-t bg-muted/30 flex flex-col gap-3">
-                <Button asChild variant="outline" size="lg" className="w-full font-bold shadow-sm border-primary text-primary hover:bg-primary/10">
-                  <Link href="/cambridge-school-fees-kenya" onClick={() => setIsOpen(false)}>
-                    Fee Structure
-                  </Link>
-                </Button>
                 <Button asChild size="lg" className="w-full bg-secondary text-secondary-foreground hover:bg-secondary/90 font-bold shadow-lg">
                   <Link href="/admission" onClick={() => setIsOpen(false)}>
                     Admission
