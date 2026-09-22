@@ -23,3 +23,15 @@ export const eventsQuery = `*[_type == "event" && eventDate > now()] | order(eve
     alt
   }
 }`
+
+export const vacanciesQuery = `*[_type == "vacancy" && isActive == true] | order(_createdAt desc) {
+  _id,
+  title,
+  slug,
+  category,
+  employmentType,
+  location,
+  closingDate,
+  shortDescription,
+  requirements
+}`;

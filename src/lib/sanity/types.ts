@@ -31,3 +31,17 @@ export interface SanityEvent {
         alt?: string
     }
 }
+
+export interface SanityVacancy {
+    _id: string
+    title: string
+    slug: {
+        current: string
+    }
+    category: string
+    employmentType: string
+    location?: string
+    closingDate?: string
+    shortDescription: string
+    requirements?: string[]
+}

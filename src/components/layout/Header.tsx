@@ -59,6 +59,7 @@ export function Header() {
     { title: "Co-Curricular Activities", href: "/co-curricular-activities" },
     { title: "School Calendar", href: "/school-calendar" },
     { title: "Fee Structure", href: "/cambridge-school-fees-kenya" },
+    { title: "Careers", href: "/careers" },
   ];
 
   return (
@@ -138,6 +139,14 @@ export function Header() {
               </NavigationMenuItem>
 
 
+
+              <NavigationMenuItem>
+                <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
+                  <Link href="/careers">
+                    Careers
+                  </Link>
+                </NavigationMenuLink>
+              </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
@@ -231,6 +240,14 @@ export function Header() {
                   </div>
 
 
+
+                  <Link
+                    href="/careers"
+                    onClick={() => setIsOpen(false)}
+                    className="px-6 py-3 text-lg font-heading font-bold text-primary hover:bg-secondary/10 hover:text-secondary transition-colors"
+                  >
+                    Careers
+                  </Link>
 
                   <Link
                     href="/contact"

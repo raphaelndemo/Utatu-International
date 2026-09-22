@@ -68,6 +68,11 @@ export function Footer() {
                                     Contact Us
                                 </Link>
                             </li>
+                            <li>
+                                <Link href="/careers" className="hover:text-secondary transition-colors">
+                                    Careers
+                                </Link>
+                            </li>
                         </ul>
                     </div>
 

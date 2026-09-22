@@ -13,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         '/co-curricular-activities',
         '/contact',
         '/cambridge-school-fees-kenya',
+        '/careers',
         '/posts',
         '/school-calendar',
     ].map((route) => ({
