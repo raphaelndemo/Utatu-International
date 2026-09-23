@@ -1,143 +1,70 @@
-"use client";
-
-import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { TalentNetworkForm } from "@/components/careers/talent-network-form";
+import { client } from "@/lib/sanity/client";
+import { vacanciesQuery } from "@/lib/sanity/queries";
+import { SanityVacancy } from "@/lib/sanity/types";
 import {
     Briefcase,
     Laptop,
     GraduationCap,
     HeartHandshake,
     Sparkles,
-    CheckCircle2,
-    AlertCircle,
-    Loader2,
     ArrowRight,
     MapPin,
     Users,
     Compass,
-    Mail,
-    Send,
+    Calendar,
+    Clock,
+    CheckCircle2,
 } from "lucide-react";
 
-export default function CareersPage() {
-    const [formData, setFormData] = useState({
-        fullName: "",
-        email: "",
-        phone: "",
-        roleInterest: "",
-        experienceYears: "",
-        curriculumExperience: "",
-        portfolioOrResumeUrl: "",
-        message: "",
-    });
+const supportingValueProposition =
+    "Join a dynamic team of educators pioneering a flexible, hybrid Cambridge education model in Kenya. We blend digital innovation with personalized mentorship to empower students everywhere. Thrive in an environment that values professional freedom, modern pedagogy, and student-first impact.";
 
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
-    const [statusMessage, setStatusMessage] = useState("");
+const perks = [
+    {
+        title: "Hybrid Flexibility",
+        description:
+            "Enjoy a flexible work model combining remote teaching with localized support right here in Nairobi.",
+        icon: Laptop,
+        badge: "Work-Life Balance",
+    },
+    {
+        title: "Continuous Growth",
+        description:
+            "Access ongoing professional development and specialized training in modern hybrid and Cambridge pedagogy.",
+        icon: GraduationCap,
+        badge: "Professional Training",
+    },
+    {
+        title: "Student-First Impact",
+        description:
+            "Deliver meaningful outcomes through smaller learning cohorts, individualized pacing, and authentic mentorship.",
+        icon: HeartHandshake,
+        badge: "Purposeful Work",
+    },
+    {
+        title: "Modern Digital Ecosystem",
+        description:
+            "Leverage cutting-edge collaborative tools and streamlined virtual classroom technologies designed to empower teachers.",
+        icon: Sparkles,
+        badge: "Digital Innovation",
+    },
+];
 
-    const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-    ) => {
-        const { name, value } = e.target;
-        setFormData((prev) => ({ ...prev, [name]: value }));
-    };
+export default async function CareersPage() {
+    // Fetch active vacancies from Sanity
+    let vacancies: SanityVacancy[] = [];
+    try {
+        vacancies = await client.fetch(vacanciesQuery);
+    } catch (error) {
+        console.error("Error fetching vacancies:", error);
+    }
 
-    const handleSubmit = async (e: React.FormEvent) => {
-        e.preventDefault();
-        setIsSubmitting(true);
-        setStatus("idle");
-        setStatusMessage("");
-
-        try {
-            const response = await fetch("/api/careers", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(formData),
-            });
-
-            const data = await response.json();
-
-            if (response.ok) {
-                setStatus("success");
-                setStatusMessage(
-                    data.message ||
-                    "Thank you for submitting your application. We will reach out when a relevant opportunity arises!"
-                );
-                setFormData({
-                    fullName: "",
-                    email: "",
-                    phone: "",
-                    roleInterest: "",
-                    experienceYears: "",
-                    curriculumExperience: "",
-                    portfolioOrResumeUrl: "",
-                    message: "",
-                });
-            } else {
-                setStatus("error");
-                setStatusMessage(data.error || "Failed to submit application. Please try again.");
-            }
-        } catch {
-            setStatus("error");
-            setStatusMessage("A network or server error occurred. Please try again later.");
-        } finally {
-            setIsSubmitting(false);
-        }
-    };
-
-    const supportingValueProposition =
-        "Join a dynamic team of educators pioneering a flexible, hybrid Cambridge education model in Kenya. We blend digital innovation with personalized mentorship to empower students everywhere. Thrive in an environment that values professional freedom, modern pedagogy, and student-first impact.";
-
-    const perks = [
-        {
-            title: "Hybrid Flexibility",
-            description:
-                "Enjoy a flexible work model combining remote teaching with localized support right here in Nairobi.",
-            icon: Laptop,
-            badge: "Work-Life Balance",
-        },
-        {
-            title: "Continuous Growth",
-            description:
-                "Access ongoing professional development and specialized training in modern hybrid and Cambridge pedagogy.",
-            icon: GraduationCap,
-            badge: "Professional Training",
-        },
-        {
-            title: "Student-First Impact",
-            description:
-                "Deliver meaningful outcomes through smaller learning cohorts, individualized pacing, and authentic mentorship.",
-            icon: HeartHandshake,
-            badge: "Purposeful Work",
-        },
-        {
-            title: "Modern Digital Ecosystem",
-            description:
-                "Leverage cutting-edge collaborative tools and streamlined virtual classroom technologies designed to empower teachers.",
-            icon: Sparkles,
-            badge: "Digital Innovation",
-        },
-    ];
-
-    const roleOptions = [
-        "Cambridge Primary Educator (Years 1 - 6)",
-        "Cambridge Lower Secondary / Checkpoint Specialist (Years 7 - 9)",
-        "Cambridge IGCSE / Upper Secondary Teacher",
-        "Cambridge International A-Level Educator",
-        "Special Needs Education (SEN / Remedial Specialist)",
-        "Early Years / Foundation Stage Teacher (Ages 3 - 5)",
-        "Student Counselor / Academic Mentor",
-        "Curriculum & Co-Curricular Facilitator",
-        "Administrative & Operational Support",
-        "Other / General Inquiry",
-    ];
+    const hasVacancies = vacancies.length > 0;
 
     return (
         <div className="flex flex-col min-h-screen">
@@ -169,16 +96,29 @@ export default function CareersPage() {
 
                     {/* Hero Action CTA Buttons */}
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                        <Button
-                            size="lg"
-                            className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-8 py-6 text-base shadow-lg hover:shadow-secondary/20 transition-all w-full sm:w-auto"
-                            asChild
-                        >
-                            <a href="#talent-network">
-                                Join Talent Network
-                                <ArrowRight className="ml-2 w-4 h-4" />
-                            </a>
-                        </Button>
+                        {hasVacancies ? (
+                            <Button
+                                size="lg"
+                                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-8 py-6 text-base shadow-lg hover:shadow-secondary/20 transition-all w-full sm:w-auto"
+                                asChild
+                            >
+                                <a href="#open-positions">
+                                    View Open Positions ({vacancies.length})
+                                    <ArrowRight className="ml-2 w-4 h-4" />
+                                </a>
+                            </Button>
+                        ) : (
+                            <Button
+                                size="lg"
+                                className="bg-secondary text-secondary-foreground hover:bg-secondary/90 font-semibold px-8 py-6 text-base shadow-lg hover:shadow-secondary/20 transition-all w-full sm:w-auto"
+                                asChild
+                            >
+                                <a href="#talent-network">
+                                    Join Talent Network
+                                    <ArrowRight className="ml-2 w-4 h-4" />
+                                </a>
+                            </Button>
+                        )}
                         <Button
                             size="lg"
                             variant="outline"
@@ -257,281 +197,150 @@ export default function CareersPage() {
                 </div>
             </section>
 
-            {/* Vacancy Status / General Application Callout */}
-            <section className="py-12 bg-background border-y border-border/50">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <Card className="relative overflow-hidden border border-secondary/30 bg-gradient-to-br from-secondary/5 via-card to-secondary/10 shadow-sm py-2">
-                        {/* Decorative accent */}
-                        <div className="absolute top-0 right-0 w-48 h-48 bg-secondary/10 rounded-full blur-2xl pointer-events-none" />
-
-                        <CardContent className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 p-6">
-                            <div className="space-y-3 max-w-xl">
-                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-700 border border-amber-300/40">
-                                    <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                                    <span>Vacancy Status</span>
-                                </div>
-                                <CardTitle className="text-2xl sm:text-3xl font-bold font-heading text-primary">
-                                    No current vacancies
-                                </CardTitle>
-                                <CardDescription className="text-muted-foreground text-sm sm:text-base leading-relaxed">
-                                    We don&apos;t have any open positions right now, but we&apos;re always looking for exceptional talent. Drop us your details below and we&apos;ll reach out when a matching role opens up.
-                                </CardDescription>
+            {/* Open Positions Section (Dynamic from Sanity) */}
+            {hasVacancies ? (
+                <section id="open-positions" className="py-16 bg-background border-y border-border/50 scroll-mt-20">
+                    <div className="container mx-auto px-4 max-w-5xl">
+                        <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-700 border border-emerald-300/40">
+                                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                                <span>{vacancies.length} Open {vacancies.length === 1 ? "Position" : "Positions"}</span>
                             </div>
+                            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary">
+                                Current Vacancies
+                            </h2>
+                            <p className="text-muted-foreground text-base sm:text-lg">
+                                We&apos;re actively looking for talented educators to join our team. Apply directly or join our talent network.
+                            </p>
+                        </div>
 
-                            <div className="shrink-0">
-                                <Button
-                                    asChild
-                                    size="lg"
-                                    className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 shadow-sm w-full md:w-auto"
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            {vacancies.map((vacancy) => (
+                                <Card
+                                    key={vacancy._id}
+                                    className="border border-border/60 bg-card hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col"
                                 >
-                                    <a href="#talent-network">
-                                        Submit Details
-                                        <ArrowRight className="ml-2 w-4 h-4" />
-                                    </a>
-                                </Button>
-                            </div>
-                        </CardContent>
-                    </Card>
-                </div>
-            </section>
+                                    <CardHeader className="space-y-3">
+                                        <div className="flex flex-wrap items-center gap-2">
+                                            <span className="text-[11px] font-semibold text-primary uppercase tracking-wider bg-primary/10 px-2.5 py-0.5 rounded-full">
+                                                {vacancy.category}
+                                            </span>
+                                            <span className="text-[11px] font-semibold text-secondary uppercase tracking-wider bg-secondary/10 px-2.5 py-0.5 rounded-full">
+                                                {vacancy.employmentType}
+                                            </span>
+                                        </div>
+                                        <CardTitle className="text-xl font-heading text-primary">
+                                            {vacancy.title}
+                                        </CardTitle>
+                                        <CardDescription className="text-sm text-muted-foreground leading-relaxed">
+                                            {vacancy.shortDescription}
+                                        </CardDescription>
+                                    </CardHeader>
 
-            {/* Form Section: Join Our Talent Network */}
-            <section id="talent-network" className="py-20 bg-muted/20 scroll-mt-16">
-                <div className="container mx-auto px-4 max-w-4xl">
-                    <div className="text-center mb-12 space-y-3">
-                        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-heading text-primary">
-                            Join Our Talent Network
-                        </h2>
-                        <p className="text-muted-foreground text-base sm:text-lg max-w-2xl mx-auto">
-                            Submit your general application below to get considered for upcoming hybrid teaching and support roles.
-                        </p>
-                    </div>
+                                    <CardContent className="flex-1 space-y-4">
+                                        {/* Location & Deadline */}
+                                        <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+                                            {vacancy.location && (
+                                                <div className="flex items-center gap-1.5">
+                                                    <MapPin className="w-3.5 h-3.5 text-secondary" />
+                                                    <span>{vacancy.location}</span>
+                                                </div>
+                                            )}
+                                            {vacancy.closingDate && (
+                                                <div className="flex items-center gap-1.5">
+                                                    <Calendar className="w-3.5 h-3.5 text-secondary" />
+                                                    <span>
+                                                        Deadline: {new Date(vacancy.closingDate).toLocaleDateString("en-KE", {
+                                                            day: "numeric",
+                                                            month: "short",
+                                                            year: "numeric",
+                                                        })}
+                                                    </span>
+                                                </div>
+                                            )}
+                                        </div>
 
-                    <Card className="border border-border/80 shadow-md bg-card">
-                        <CardHeader className="border-b border-border/40 pb-6">
-                            <CardTitle className="text-xl font-heading text-primary">
-                                General Application Form
-                            </CardTitle>
-                            <CardDescription>
-                                Share your background, subjects of expertise, and teaching credentials.
-                            </CardDescription>
-                        </CardHeader>
-
-                        <CardContent className="pt-6">
-                            {status === "success" && (
-                                <div className="mb-6 p-4 bg-green-50 text-green-800 rounded-lg flex items-start gap-3 border border-green-200">
-                                    <CheckCircle2 className="h-5 w-5 shrink-0 mt-0.5 text-green-600" />
-                                    <div>
-                                        <h4 className="font-semibold text-green-900">Application Received</h4>
-                                        <p className="text-sm mt-0.5">{statusMessage}</p>
-                                    </div>
-                                </div>
-                            )}
-
-                            {status === "error" && (
-                                <div className="mb-6 p-4 bg-red-50 text-red-800 rounded-lg flex items-start gap-3 border border-red-200">
-                                    <AlertCircle className="h-5 w-5 shrink-0 mt-0.5 text-red-600" />
-                                    <div>
-                                        <h4 className="font-semibold text-red-900">Submission Error</h4>
-                                        <p className="text-sm mt-0.5">{statusMessage}</p>
-                                    </div>
-                                </div>
-                            )}
-
-                            <form onSubmit={handleSubmit} className="space-y-6">
-                                {/* Name and Email */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="fullName" className="text-sm font-medium text-foreground">
-                                            Full Name <span className="text-red-500">*</span>
-                                        </label>
-                                        <Input
-                                            id="fullName"
-                                            name="fullName"
-                                            placeholder="e.g. Jane Doe"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
-                                            required
-                                            disabled={isSubmitting}
-                                        />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label htmlFor="email" className="text-sm font-medium text-foreground">
-                                            Email Address <span className="text-red-500">*</span>
-                                        </label>
-                                        <Input
-                                            id="email"
-                                            name="email"
-                                            type="email"
-                                            placeholder="e.g. jane.doe@example.com"
-                                            value={formData.email}
-                                            onChange={handleChange}
-                                            required
-                                            disabled={isSubmitting}
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Phone & Role Interest */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="phone" className="text-sm font-medium text-foreground">
-                                            Phone / WhatsApp Number
-                                        </label>
-                                        <Input
-                                            id="phone"
-                                            name="phone"
-                                            placeholder="e.g. +254 700 000 000"
-                                            value={formData.phone}
-                                            onChange={handleChange}
-                                            disabled={isSubmitting}
-                                        />
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label htmlFor="roleInterest" className="text-sm font-medium text-foreground">
-                                            Primary Role of Interest <span className="text-red-500">*</span>
-                                        </label>
-                                        <select
-                                            id="roleInterest"
-                                            name="roleInterest"
-                                            className="w-full h-9 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                                            value={formData.roleInterest}
-                                            onChange={handleChange}
-                                            required
-                                            disabled={isSubmitting}
-                                        >
-                                            <option value="" disabled>
-                                                Select a role or area...
-                                            </option>
-                                            {roleOptions.map((role) => (
-                                                <option key={role} value={role}>
-                                                    {role}
-                                                </option>
-                                            ))}
-                                        </select>
-                                    </div>
-                                </div>
-
-                                {/* Experience & Curriculum */}
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    <div className="space-y-2">
-                                        <label htmlFor="experienceYears" className="text-sm font-medium text-foreground">
-                                            Years of Teaching / Professional Experience
-                                        </label>
-                                        <select
-                                            id="experienceYears"
-                                            name="experienceYears"
-                                            className="w-full h-9 rounded-md border border-input bg-transparent px-3 py-1 text-sm shadow-xs transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                                            value={formData.experienceYears}
-                                            onChange={handleChange}
-                                            disabled={isSubmitting}
-                                        >
-                                            <option value="">Select experience level...</option>
-                                            <option value="0-1 years">0 - 1 years (Early Career)</option>
-                                            <option value="2-4 years">2 - 4 years</option>
-                                            <option value="5-8 years">5 - 8 years</option>
-                                            <option value="9+ years">9+ years (Senior Educator / Specialist)</option>
-                                        </select>
-                                    </div>
-
-                                    <div className="space-y-2">
-                                        <label htmlFor="curriculumExperience" className="text-sm font-medium text-foreground">
-                                            Curriculum Background
-                                        </label>
-                                        <Input
-                                            id="curriculumExperience"
-                                            name="curriculumExperience"
-                                            placeholder="e.g. Cambridge (CAIE), CBC, British National, IB"
-                                            value={formData.curriculumExperience}
-                                            onChange={handleChange}
-                                            disabled={isSubmitting}
-                                        />
-                                    </div>
-                                </div>
-
-                                {/* Portfolio / LinkedIn / Resume Link */}
-                                <div className="space-y-2">
-                                    <label htmlFor="portfolioOrResumeUrl" className="text-sm font-medium text-foreground">
-                                        Resume / LinkedIn / Portfolio Link (Google Drive, LinkedIn, etc.)
-                                    </label>
-                                    <Input
-                                        id="portfolioOrResumeUrl"
-                                        name="portfolioOrResumeUrl"
-                                        type="url"
-                                        placeholder="https://linkedin.com/in/... or Google Drive link"
-                                        value={formData.portfolioOrResumeUrl}
-                                        onChange={handleChange}
-                                        disabled={isSubmitting}
-                                    />
-                                    <p className="text-xs text-muted-foreground">
-                                        If linking a Google Drive file, please ensure permissions are set to &quot;Anyone with the link can view&quot;.
-                                    </p>
-                                </div>
-
-                                {/* Cover Note / Introduction */}
-                                <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium text-foreground">
-                                        Brief Introduction & Educational Philosophy
-                                    </label>
-                                    <Textarea
-                                        id="message"
-                                        name="message"
-                                        placeholder="Tell us about your background, subjects you specialize in, and what excites you about hybrid Cambridge education..."
-                                        rows={4}
-                                        value={formData.message}
-                                        onChange={handleChange}
-                                        disabled={isSubmitting}
-                                    />
-                                </div>
-
-                                {/* Submit Button */}
-                                <CardFooter className="flex flex-col gap-4 px-0 pt-4 pb-0">
-                                    <Button
-                                        type="submit"
-                                        size="lg"
-                                        className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium py-6 text-base"
-                                        disabled={isSubmitting}
-                                    >
-                                        {isSubmitting ? (
-                                            <>
-                                                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                                                Submitting Application...
-                                            </>
-                                        ) : (
-                                            <>
-                                                <Send className="mr-2 h-4 w-4" />
-                                                Submit General Application
-                                            </>
+                                        {/* Requirements */}
+                                        {vacancy.requirements && vacancy.requirements.length > 0 && (
+                                            <div className="space-y-2">
+                                                <h4 className="text-xs font-semibold text-primary uppercase tracking-wider">
+                                                    Key Requirements
+                                                </h4>
+                                                <ul className="space-y-1.5">
+                                                    {vacancy.requirements.slice(0, 4).map((req, i) => (
+                                                        <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                                                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-500 shrink-0 mt-0.5" />
+                                                            <span>{req}</span>
+                                                        </li>
+                                                    ))}
+                                                    {vacancy.requirements.length > 4 && (
+                                                        <li className="text-xs text-muted-foreground pl-5.5">
+                                                            +{vacancy.requirements.length - 4} more requirements
+                                                        </li>
+                                                    )}
+                                                </ul>
+                                            </div>
                                         )}
-                                    </Button>
+                                    </CardContent>
 
-                                    <p className="text-center text-xs text-muted-foreground">
-                                        By submitting, your details will be retained in our educator database for consideration as new hybrid and on-site teaching opportunities become available.
-                                    </p>
-                                </CardFooter>
-                            </form>
-                        </CardContent>
-                    </Card>
-
-                    {/* Direct Contact Inquiries */}
-                    <div className="mt-12 text-center text-sm text-muted-foreground">
-                        Have a specific query regarding academic partnerships or careers? Reach out directly to{" "}
-                        <a
-                            href="mailto:admin@utatuinternational.com"
-                            className="text-secondary hover:underline font-medium"
-                        >
-                            admin@utatuinternational.com
-                        </a>{" "}
-                        or learn more{" "}
-                        <Link href="/about" className="text-primary hover:underline font-medium">
-                            About Utatu International
-                        </Link>
-                        .
+                                    <div className="px-6 pb-6 pt-2">
+                                        <Button
+                                            asChild
+                                            className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-medium"
+                                        >
+                                            <a href="#talent-network">
+                                                Apply Now
+                                                <ArrowRight className="ml-2 w-4 h-4" />
+                                            </a>
+                                        </Button>
+                                    </div>
+                                </Card>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            ) : (
+                /* No Vacancies Empty State */
+                <section className="py-12 bg-background border-y border-border/50">
+                    <div className="container mx-auto px-4 max-w-4xl">
+                        <Card className="relative overflow-hidden border border-secondary/30 bg-gradient-to-br from-secondary/5 via-card to-secondary/10 shadow-sm py-2">
+                            {/* Decorative accent */}
+                            <div className="absolute top-0 right-0 w-48 h-48 bg-secondary/10 rounded-full blur-2xl pointer-events-none" />
+
+                            <CardContent className="relative z-10 flex flex-col md:flex-row md:items-center justify-between gap-6 p-6">
+                                <div className="space-y-3 max-w-xl">
+                                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-700 border border-amber-300/40">
+                                        <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                                        <span>Vacancy Status</span>
+                                    </div>
+                                    <CardTitle className="text-2xl sm:text-3xl font-bold font-heading text-primary">
+                                        No current vacancies
+                                    </CardTitle>
+                                    <CardDescription className="text-muted-foreground text-sm sm:text-base leading-relaxed">
+                                        We don&apos;t have any open positions right now, but we&apos;re always looking for exceptional talent. Drop us your details below and we&apos;ll reach out when a matching role opens up.
+                                    </CardDescription>
+                                </div>
+
+                                <div className="shrink-0">
+                                    <Button
+                                        asChild
+                                        size="lg"
+                                        className="bg-primary text-primary-foreground hover:bg-primary/90 font-medium px-6 shadow-sm w-full md:w-auto"
+                                    >
+                                        <a href="#talent-network">
+                                            Submit Details
+                                            <ArrowRight className="ml-2 w-4 h-4" />
+                                        </a>
+                                    </Button>
+                                </div>
+                            </CardContent>
+                        </Card>
+                    </div>
+                </section>
+            )}
+
+            {/* Talent Network Form (Client Component) */}
+            <TalentNetworkForm />
         </div>
     );
 }
